@@ -21,6 +21,10 @@ export interface PhilosophyContent {
     text: string;
     attribution?: string;
   };
+  image?: {
+    src: string;
+    alt: string;
+  };
 }
 
 /** Mission statement content */
@@ -31,6 +35,10 @@ export interface MissionContent {
     title: string;
     description: string;
   }>;
+  image?: {
+    src: string;
+    alt: string;
+  };
 }
 
 /** Stakeholder profile */

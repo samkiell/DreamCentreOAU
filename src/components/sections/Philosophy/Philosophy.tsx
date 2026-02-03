@@ -3,7 +3,7 @@
  * Core philosophy and ethos of the centre
  */
 
-import { Container } from '@/components/ui';
+import { Container, OptimizedImage } from '@/components/ui';
 import { getPhilosophy } from '@/lib/content';
 import styles from './Philosophy.module.css';
 
@@ -29,21 +29,35 @@ export function Philosophy() {
           </header>
 
           <div className={styles.body}>
-            {content.body.map((paragraph, index) => (
-              <p key={index} className={styles.paragraph}>
-                {paragraph}
-              </p>
-            ))}
+            <div className={styles.content}>
+              {content.body.map((paragraph, index) => (
+                <p key={index} className={styles.paragraph}>
+                  {paragraph}
+                </p>
+              ))}
 
-            {content.pullQuote && (
-              <blockquote className={styles.pullQuote}>
-                "{content.pullQuote.text}"
-                {content.pullQuote.attribution && (
-                  <cite className={styles.attribution}>
-                    — {content.pullQuote.attribution}
-                  </cite>
-                )}
-              </blockquote>
+              {content.pullQuote && (
+                <blockquote className={styles.pullQuote}>
+                  "{content.pullQuote.text}"
+                  {content.pullQuote.attribution && (
+                    <cite className={styles.attribution}>
+                      — {content.pullQuote.attribution}
+                    </cite>
+                  )}
+                </blockquote>
+              )}
+            </div>
+
+            {content.image && (
+              <div className={styles.imageWrapper}>
+                <OptimizedImage
+                  src={content.image.src}
+                  alt={content.image.alt}
+                  fill
+                  className={styles.image}
+                  sizes="(max-width: 768px) 100vw, 500px"
+                />
+              </div>
             )}
           </div>
         </div>

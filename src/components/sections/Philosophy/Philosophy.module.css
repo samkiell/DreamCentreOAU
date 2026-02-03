@@ -4,13 +4,16 @@
 }
 
 .inner {
-  max-width: var(--max-width-prose);
+  max-width: var(--max-width-wide);
   margin: 0 auto;
 }
 
 .header {
   text-align: center;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
+  max-width: var(--max-width-prose);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .label {
@@ -40,6 +43,13 @@
 }
 
 .body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
@@ -60,7 +70,7 @@
   color: var(--color-deep);
   border-left: 3px solid var(--color-earth);
   padding-left: var(--space-6);
-  margin: var(--space-10) 0;
+  margin: var(--space-4) 0;
 }
 
 .attribution {
@@ -72,6 +82,31 @@
   color: var(--color-text-muted);
   margin-top: var(--space-4);
   letter-spacing: var(--tracking-wide);
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.image {
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .body {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+  
+  .imageWrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 @media (max-width: 768px) {
@@ -90,5 +125,9 @@
   .pullQuote {
     font-size: var(--text-xl);
     padding-left: var(--space-4);
+  }
+  
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
   }
 }
