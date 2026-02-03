@@ -34,9 +34,9 @@
 }
 
 .logoImage {
-  width: 180px;
+  width: 320px;
   height: auto;
-  min-height: 80px;
+  min-height: 60px;
   object-fit: contain;
 }
 
@@ -177,7 +177,7 @@
   }
   
   .logoImage {
-    width: 120px;
+    width: 180px;
   }
 }
 
