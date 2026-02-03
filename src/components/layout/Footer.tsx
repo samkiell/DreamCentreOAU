@@ -52,9 +52,6 @@ export function Footer() {
             <span className={styles.copyright}>
               © {year} Senator Oluremi Tinubu Dream Centre. All rights reserved.
             </span>
-            <a href="#accessibility" className={styles.accessibilityLink}>
-              Accessibility Statement
-            </a>
           </div>
         </div>
       </Container>
