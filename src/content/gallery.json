@@ -1,5 +1,13 @@
 [
   {
+    "id": "exterior-overall",
+    "src": "/images/gallery/overall-exterior.jpg",
+    "alt": "Wide exterior view of the Dream Centre building and its surrounding landscape.",
+    "caption": "Architectural Overview",
+    "width": 1600,
+    "height": 1067
+  },
+  {
     "id": "interior-hall",
     "src": "/images/gallery/main-hall.jpg",
     "alt": "Modern main hall of the Dream Centre with student activity.",
