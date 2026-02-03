@@ -1,0 +1,25 @@
+[
+  {
+    "id": "patron",
+    "name": "Senator Oluremi Tinubu",
+    "title": "First Lady of the Federal Republic of Nigeria",
+    "role": "patron",
+    "image": {
+      "src": "/images/stakeholders/senator-tinubu.jpg",
+      "alt": "Portrait of Senator Oluremi Tinubu"
+    },
+    "bio": "The visionary patron whose commitment to education and youth development inspired the creation of the Dream Centre.",
+    "order": 1
+  },
+  {
+    "id": "vice-chancellor",
+    "name": "Professor Adebayo Simeon Bamire",
+    "title": "Vice-Chancellor, Obafemi Awolowo University",
+    "role": "leadership",
+    "image": {
+      "src": "/images/stakeholders/vice-chancellor.jpg",
+      "alt": "Portrait of the Vice-Chancellor"
+    },
+    "order": 2
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "exterior-main",
+    "src": "/images/gallery/exterior-main.jpg",
+    "alt": "Main entrance of the Dream Centre building with its modern architectural facade",
+    "caption": "The Main Entrance",
+    "width": 1600,
+    "height": 1067,
+    "category": "exterior"
+  },
+  {
+    "id": "interior-lobby",
+    "src": "/images/gallery/interior-lobby.jpg",
+    "alt": "The spacious lobby with natural light streaming through large windows",
+    "caption": "Welcome Hall",
+    "width": 1600,
+    "height": 1067,
+    "category": "interior"
+  },
+  {
+    "id": "interior-reading",
+    "src": "/images/gallery/interior-reading.jpg",
+    "alt": "A quiet reading corner with comfortable seating and warm lighting",
+    "caption": "Reading Corner",
+    "width": 1600,
+    "height": 1067,
+    "category": "interior"
+  },
+  {
+    "id": "grounds-pathway",
+    "src": "/images/gallery/grounds-pathway.jpg",
+    "alt": "Tree-lined pathway leading to the Dream Centre",
+    "caption": "The Approach",
+    "width": 1600,
+    "height": 1067,
+    "category": "grounds"
+  }
+]
