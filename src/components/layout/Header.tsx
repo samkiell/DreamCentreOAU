@@ -13,6 +13,7 @@ import styles from './Header.module.css';
 
 const navLinks = [
   { href: '#philosophy', label: 'Philosophy' },
+  { href: '#features', label: 'Programs' },
   { href: '#stakeholders', label: 'Leadership' },
   { href: '#gallery', label: 'The Space' },
   { href: '#contact', label: 'Visit' },

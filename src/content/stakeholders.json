@@ -8,7 +8,7 @@
       "src": "/images/stakeholders/senator-tinubu.jpg",
       "alt": "Portrait of Senator Oluremi Tinubu"
     },
-    "bio": "The visionary patron whose commitment to education and youth development inspired the creation of the Dream Centre.",
+    "bio": "Project visionary and namesake. Author of 'The Journey of Grace' autobiography, serving as a case study for role modelling through hard work, discipline, integrity, and faith.",
     "order": 1
   },
   {
@@ -20,7 +20,7 @@
       "src": "/images/stakeholders/ooni.jpg",
       "alt": "Portrait of the Ooni of Ife"
     },
-    "bio": "Conceptualized and donated the building. Championed the project since 2019, transforming a former jungle area into a modern hub.",
+    "bio": "Conceptualized and donated the building. Championed the project since 2019, transforming a former jungle area into a symbol of perseverance and collective commitment.",
     "order": 2
   },
   {
@@ -32,7 +32,7 @@
       "src": "/images/stakeholders/nitda-dg.jpg",
       "alt": "Portrait of the NITDA Director General"
     },
-    "bio": "Supplied all IT-enabled devices and AI tools within the facility, enabling digital technology and storytelling to preserve history.",
+    "bio": "Equipped the facility with IT-enabled devices and AI tools, using digital technology, artificial intelligence, and storytelling to preserve our history.",
     "order": 3
   },
   {
@@ -45,7 +45,7 @@
       "alt": "Portrait of the Vice-Chancellor",
       "position": "center 15%"
     },
+    "bio": "Provided the land and hosts the centre at OAU, a premier institution chosen for its legacy of academic excellence and youth development.",
     "order": 4
   }
 ]
-
