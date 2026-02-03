@@ -149,3 +149,142 @@
     flex: 0 0 90%;
   }
 }
+
+/* Lightbox Styles */
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  backdrop-filter: blur(8px);
+  animation: fadeIn var(--transition-base);
+}
+
+.lightboxContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxImageWrapper {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 120px);
+  max-width: 1200px;
+}
+
+.lightboxImage {
+  object-fit: contain;
+}
+
+.lightboxFooter {
+  margin-top: var(--space-6);
+  text-align: center;
+  color: var(--color-canvas);
+  max-width: 600px;
+}
+
+.lightboxCaption {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.lightboxCounter {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  opacity: 0.7;
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-8);
+  right: var(--space-8);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--color-canvas);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1010;
+  transition: all var(--transition-fast);
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-earth);
+  transform: rotate(90deg);
+}
+
+.lightboxArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--color-canvas);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  z-index: 1010;
+}
+
+.lightboxArrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-earth);
+}
+
+.arrowPrev {
+  left: var(--space-8);
+}
+
+.arrowNext {
+  right: var(--space-8);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .lightboxArrow {
+    width: 48px;
+    height: 48px;
+    top: auto;
+    bottom: var(--space-4);
+    transform: none;
+  }
+  
+  .arrowPrev { left: 25%; }
+  .arrowNext { right: 25%; }
+  
+  .closeButton {
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightboxCaption {
+    font-size: var(--text-lg);
+  }
+}
