@@ -1,9 +1,10 @@
 {
   "heading": "The Dream Centre",
-  "subheading": "A Space for Reflection and Growth",
-  "tagline": "Senator Oluremi Tinubu Dream Centre at Obafemi Awolowo University",
+  "subheading": "Inspiration • Mentorship • Digital Innovation",
+  "tagline": "Senator Oluremi Tinubu Dream Centre at Obafemi Awolowo University, Ile-Ife",
+  "commissionedDate": "29 January 2026",
   "image": {
     "src": "/images/hero/dream-centre-building.jpg",
-    "alt": "The Dream Centre building at Obafemi Awolowo University, bathed in warm afternoon light"
+    "alt": "The Dream Centre building at Obafemi Awolowo University, a modern hub for youth inspiration and digital mentorship"
   }
 }

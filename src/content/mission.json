@@ -1,22 +1,22 @@
 {
   "heading": "Our Mission",
-  "statement": "To create an environment where young minds are nurtured through thoughtful mentorship, where reflection is valued as a pathway to growth, and where every visitor leaves with renewed clarity about their purpose and potential.",
+  "statement": "To motivate young people to pursue their dreams with purpose, patience, and discipline through storytelling, mentorship, and reflection. We emphasize hard work, discipline, integrity, and faith — drawing from Senator Tinubu's life story as a case study for role modelling.",
   "values": [
     {
+      "title": "Storytelling",
+      "description": "Interactive spaces for sharing life experiences through AI-powered digital media, preserving our history and inspiring the next generation."
+    },
+    {
       "title": "Mentorship",
-      "description": "Providing guidance through meaningful, sustained relationships with experienced professionals and academics."
+      "description": "Leadership training emphasizing discipline, resilience, and vision through meaningful relationships with experienced role models."
+    },
+    {
+      "title": "Digital Innovation",
+      "description": "Hands-on exposure to IT and innovation tools, blending technology with personal narratives to guide young people toward responsible leadership."
     },
     {
       "title": "Reflection",
-      "description": "Creating spaces and opportunities for quiet contemplation and self-discovery."
-    },
-    {
-      "title": "Growth",
-      "description": "Supporting the holistic development of students beyond their academic pursuits."
-    },
-    {
-      "title": "Legacy",
-      "description": "Building a lasting tradition of excellence and service to the university community."
+      "description": "A structured space for students to engage with real-life stories, develop resilience, and discover their unique path forward."
     }
   ]
 }
