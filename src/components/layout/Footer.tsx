@@ -32,11 +32,6 @@ export function Footer() {
           <div className={styles.divider} aria-hidden="true" />
 
           <address className={styles.contact}>
-            {contact.address.slice(0, 2).map((line, index) => (
-              <span key={index} className={styles.contactItem}>
-                {line}
-              </span>
-            ))}
             <a
               href={getMailtoLink(contact.email)}
               className={styles.contactLink}
