@@ -165,7 +165,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .header {
-    padding: var(--space-2) 0;
+    padding: var(--space-1) 0;
   }
 
   .nav {
@@ -177,7 +177,7 @@
   }
   
   .logoImage {
-    width: 220px;
+    width: 180px;
   }
 }
 
