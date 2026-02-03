@@ -3,12 +3,24 @@
  * Core philosophy and ethos of the centre
  */
 
+'use client';
+
+import { useState, useEffect } from 'react';
 import { Container, OptimizedImage } from '@/components/ui';
-import { getPhilosophy } from '@/lib/content';
+import { getPhilosophy, getQuotes } from '@/lib/content';
 import styles from './Philosophy.module.css';
 
 export function Philosophy() {
   const content = getPhilosophy();
+  const quotes = getQuotes();
+  const [randomQuote, setRandomQuote] = useState<string | null>(null);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setRandomQuote(quotes[randomIndex]);
+  }, [quotes]);
+
+  const displayQuote = randomQuote || (content.pullQuote?.text ?? '');
 
   return (
     <section 
@@ -36,10 +48,10 @@ export function Philosophy() {
                 </p>
               ))}
 
-              {content.pullQuote && (
+              {displayQuote && (
                 <blockquote className={styles.pullQuote}>
-                  "{content.pullQuote.text}"
-                  {content.pullQuote.attribution && (
+                  "{displayQuote}"
+                  {content.pullQuote?.attribution && (
                     <cite className={styles.attribution}>
                       — {content.pullQuote.attribution}
                     </cite>

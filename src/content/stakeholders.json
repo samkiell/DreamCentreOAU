@@ -6,7 +6,8 @@
     "role": "patron",
     "image": {
       "src": "/images/stakeholders/senator-tinubu.jpg",
-      "alt": "Portrait of Senator Oluremi Tinubu"
+      "alt": "Portrait of Senator Oluremi Tinubu",
+      "position": "top center"
     },
     "bio": "Project visionary and namesake. Author of 'The Journey of Grace' autobiography, serving as a case study for role modelling through hard work, discipline, integrity, and faith.",
     "order": 1
@@ -18,7 +19,8 @@
     "role": "leadership",
     "image": {
       "src": "/images/stakeholders/ooni.jpg",
-      "alt": "Portrait of the Ooni of Ife"
+      "alt": "Portrait of the Ooni of Ife",
+      "position": "top center"
     },
     "bio": "Conceptualized and donated the building. Championed the project since 2019, transforming a former jungle area into a symbol of perseverance and collective commitment.",
     "order": 2
