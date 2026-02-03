@@ -8,6 +8,22 @@
     "height": 1067
   },
   {
+    "id": "training-session",
+    "src": "/images/gallery/training-session.jpg",
+    "alt": "Students engaged in a digital literacy workshop session.",
+    "caption": "Shaping Digital Futures",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "gallery-wall",
+    "src": "/images/gallery/gallery-wall.jpg",
+    "alt": "A gallery wall displaying milestones and historical moments.",
+    "caption": "A Legacy of Inspiration",
+    "width": 1600,
+    "height": 1067
+  },
+  {
     "id": "interior-study",
     "src": "/images/gallery/study-nook.jpg",
     "alt": "Peaceful study corner with artisanal furniture.",
@@ -16,18 +32,42 @@
     "height": 1067
   },
   {
-    "id": "tech-innovation",
-    "src": "/images/gallery/tech-hall.jpg",
-    "alt": "Students collaborating in the technology-enabled workshop space.",
-    "caption": "Digital Innovation Lab",
+    "id": "library-interior",
+    "src": "/images/gallery/library-interior.jpg",
+    "alt": "Bookshelves and the library entrance at the Dream Centre.",
+    "caption": "Curated Knowledge Base",
     "width": 1600,
     "height": 1067
   },
   {
-    "id": "library-perspective",
-    "src": "/images/gallery/library-entrance.jpg",
-    "alt": "Entryway to the Dream Centre library.",
-    "caption": "Gateway to Knowledge",
+    "id": "tech-innovation",
+    "src": "/images/gallery/tech-hall.jpg",
+    "alt": "Students collaborating in the technology-enabled workshop space.",
+    "caption": "Collaboration Hub",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "outdoor-mentorship",
+    "src": "/images/gallery/outdoor-mentorship.jpg",
+    "alt": "Students participating in an outdoor mentorship session.",
+    "caption": "Knowledge Exchange",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "community-interaction",
+    "src": "/images/gallery/community-interaction.jpg",
+    "alt": "Stakeholders and students outside the Dream Centre.",
+    "caption": "Unified Vision",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "memorabilia",
+    "src": "/images/gallery/memorabilia.jpg",
+    "alt": "Personal artifacts and recognition shelf in the centre.",
+    "caption": "Tokens of Excellence",
     "width": 1600,
     "height": 1067
   },
@@ -35,15 +75,7 @@
     "id": "mural-close",
     "src": "/images/gallery/mural-detail.jpg",
     "alt": "Artistic mural detail in the stairwell.",
-    "caption": "Inspirational Artistry",
-    "width": 1600,
-    "height": 1067
-  },
-  {
-    "id": "workshop-session",
-    "src": "/images/gallery/meeting-room.jpg",
-    "alt": "Collaborative workshop session in progress.",
-    "caption": "Mentorship in Action",
+    "caption": "Every Step Counts",
     "width": 1600,
     "height": 1067
   }
