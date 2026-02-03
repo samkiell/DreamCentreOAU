@@ -20,8 +20,8 @@
 }
 
 .footerLogo {
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
   border-radius: var(--radius-md);
   object-fit: contain;
   margin-bottom: var(--space-4);

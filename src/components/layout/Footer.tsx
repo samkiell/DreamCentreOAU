@@ -21,8 +21,8 @@ export function Footer() {
             <Image 
               src="/assets/logo.jpg" 
               alt="Dream Centre Logo" 
-              width={80} 
-              height={80}
+              width={200} 
+              height={200}
               className={styles.footerLogo}
             />
             <span className={styles.institutionName}>
