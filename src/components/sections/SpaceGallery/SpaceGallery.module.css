@@ -287,4 +287,31 @@
   .lightboxCaption {
     font-size: var(--text-lg);
   }
+
+  /* Mobile-specific Carousel Arrows */
+  .controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 var(--space-2);
+    pointer-events: none;
+    margin-top: 0;
+    z-index: 10;
+  }
+
+  .arrow {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    width: 40px;
+    height: 40px;
+    box-shadow: var(--shadow-md);
+    border: none;
+  }
+
+  .indicators {
+    display: none; /* Hide dots on mobile to focus on arrows/swipe */
+  }
 }
