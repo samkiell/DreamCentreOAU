@@ -1,13 +1,16 @@
 {
-  "heading": "Our Philosophy",
-  "subheading": "Walk Patiently With Your Own Dream",
+  "heading": "A Legacy of Excellence",
+  "subheading": "Nurturing the dreams of the next generation through digital innovation and mentorship.",
   "body": [
-    "The Senator Oluremi Tinubu Dream Centre was established to remind students not to covet the dreams of others but to walk patiently with their own, affirming that the journey toward achievement requires discipline and consistency.",
-    "In a world where over-ambition can lead astray, we believe in the power of Divine Destiny and patience. This centre serves as a symbol of perseverance, recognition, and collective commitment to supporting young Nigerians.",
-    "What you will become, God has already deposited in you. Here, we provide a sanctuary where students engage with real-life stories, develop resilience, and discover their own unique path forward through storytelling, mentorship, and reflection."
+    "The Senator Oluremi Tinubu Dream Centre is more than a building; it is a catalyst for transformation. Rooted in the rich academic tradition of Obafemi Awolowo University, the Centre provides a sanctuary for students to explore their potential, connect with mentors, and master the tools of the digital age.",
+    "Our space is designed to foster quiet reflection alongside vibrant collaboration. Each corner, from the peaceful reading niches to the high-tech workshop halls, is a testament to our commitment to excellence and the belief that every student's journey begins with a single, purposeful step."
   ],
   "pullQuote": {
-    "text": "Don't be overly ambitious. What you will become God has already deposited in you.",
+    "text": "The Dream Centre is a place where vision meets opportunity, and where the future of Nigeria is being shaped today.",
     "attribution": "Senator Oluremi Tinubu"
+  },
+  "image": {
+    "src": "/images/philosophy/stairwell-mural.jpg",
+    "alt": "A mural in the Dream Centre stairwell featuring a footprint and the quote 'A journey of 1000 miles begins with a single step'."
   }
 }
