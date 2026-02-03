@@ -1,38 +1,29 @@
 [
   {
-    "id": "exterior-main",
-    "src": "/images/gallery/exterior-main.jpg",
-    "alt": "Main entrance of the Dream Centre building - a Digital Information Hub and Mentorship Sanctuary",
-    "caption": "The Dream Centre Entrance",
-    "width": 1600,
-    "height": 1067,
-    "category": "exterior"
-  },
-  {
-    "id": "interior-lobby",
-    "src": "/images/gallery/interior-lobby.jpg",
-    "alt": "The Welcome Hall featuring IT-enabled devices supplied by NITDA",
-    "caption": "Welcome Hall & Digital Hub",
+    "id": "interior-hall",
+    "src": "/images/gallery/main-hall.jpg",
+    "alt": "Students and visitors gathering in the main hall of the Dream Centre, a spacious area designed for workshops and community interaction.",
+    "caption": "The Main Hall",
     "width": 1600,
     "height": 1067,
     "category": "interior"
   },
   {
-    "id": "interior-reading",
-    "src": "/images/gallery/interior-reading.jpg",
-    "alt": "The Inspirational Library housing 'The Journey of Grace' and other inspirational books",
-    "caption": "Inspirational Library",
+    "id": "interior-study",
+    "src": "/images/gallery/study-nook.jpg",
+    "alt": "A peaceful reading niche within the Centre, featuring a unique artisanal table and curated bookshelves.",
+    "caption": "Quiet Reflection",
     "width": 1600,
     "height": 1067,
     "category": "interior"
   },
   {
-    "id": "grounds-pathway",
-    "src": "/images/gallery/grounds-pathway.jpg",
-    "alt": "Tree-lined pathway leading to the Dream Centre on the OAU campus",
-    "caption": "The OAU Campus Approach",
+    "id": "interior-collaboration",
+    "src": "/images/gallery/tech-collaboration.jpg",
+    "alt": "Modern interior space with integrated technology and collaborative seating for digital innovation.",
+    "caption": "Collaboration Hub",
     "width": 1600,
     "height": 1067,
-    "category": "grounds"
+    "category": "interior"
   }
 ]
