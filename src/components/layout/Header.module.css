@@ -35,10 +35,10 @@
 }
 
 .logoImage {
-  width: 48px;
-  height: 48px;
+  width: 100px;
+  height: 100px;
   border-radius: var(--radius-md);
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .logoText {
@@ -192,8 +192,13 @@
     display: flex;
   }
   
-  .logo {
-    font-size: var(--text-base);
+  .logoImage {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .logoText {
+    display: none;
   }
   
   .logoAccent {
@@ -207,3 +212,4 @@
     display: none !important;
   }
 }
+
