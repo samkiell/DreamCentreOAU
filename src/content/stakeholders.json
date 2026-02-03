@@ -12,6 +12,30 @@
     "order": 1
   },
   {
+    "id": "ooni",
+    "name": "Oba Enitan Adeyeye Ogunwusi",
+    "title": "Ooni of Ife",
+    "role": "patron",
+    "image": {
+      "src": "/images/stakeholders/ooni.jpg",
+      "alt": "Portrait of the Ooni of Ife"
+    },
+    "bio": "Conceptualized and donated the building. Championed the project since 2019, transforming a former jungle area into a modern hub.",
+    "order": 2
+  },
+  {
+    "id": "nitda-dg",
+    "name": "Kashifu Inuwa Abdullahi",
+    "title": "Director General, NITDA",
+    "role": "leadership",
+    "image": {
+      "src": "/images/stakeholders/nitda-dg.jpg",
+      "alt": "Portrait of the NITDA Director General"
+    },
+    "bio": "Supplied all IT-enabled devices and AI tools within the facility, enabling digital technology and storytelling to preserve history.",
+    "order": 3
+  },
+  {
     "id": "vice-chancellor",
     "name": "Professor Adebayo Simeon Bamire",
     "title": "Vice-Chancellor, Obafemi Awolowo University",
@@ -21,6 +45,7 @@
       "alt": "Portrait of the Vice-Chancellor",
       "position": "center 15%"
     },
-    "order": 2
+    "order": 4
   }
 ]
+
