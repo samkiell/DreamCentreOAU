@@ -1,0 +1,110 @@
+.section {
+  padding: var(--space-24) 0;
+  background-color: var(--color-canvas);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.label {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-earth);
+  margin-bottom: var(--space-4);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-tight);
+  color: var(--color-deep);
+  letter-spacing: var(--tracking-tight);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+}
+
+.card {
+  padding: var(--space-10);
+  background: linear-gradient(
+    135deg,
+    var(--color-stone) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(139, 115, 85, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(59, 43, 30, 0.12);
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-earth) 0%,
+    var(--color-deep) 100%
+  );
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-canvas);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-normal);
+  color: var(--color-deep);
+  margin-bottom: var(--space-3);
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .heading {
+    font-size: var(--text-3xl);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .card {
+    padding: var(--space-8);
+  }
+}
