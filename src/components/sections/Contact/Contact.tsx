@@ -66,8 +66,17 @@ export function Contact() {
               )}
             </div>
 
-            <div className={styles.mapPlaceholder}>
-              <span className={styles.mapText}>Map coming soon</span>
+            <div className={styles.map}>
+              <a 
+                href={contact.mapUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.mapLink}
+              >
+                <div className={styles.mapOverlay}>
+                  <span className={styles.mapButton}>Open in Google Maps</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>

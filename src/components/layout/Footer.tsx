@@ -38,6 +38,14 @@ export function Footer() {
             >
               {contact.email}
             </a>
+            <a
+              href={contact.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.contactLink}
+            >
+              View on Google Maps
+            </a>
           </address>
 
           <div className={styles.bottom}>
