@@ -24,6 +24,14 @@ import stakeholdersData from '@/content/stakeholders.json';
 import galleryData from '@/content/gallery.json';
 import contactData from '@/content/contact.json';
 import featuresData from '@/content/features.json';
+import quotesData from '@/content/quotes.json';
+
+/**
+ * Get the list of formal quotes
+ */
+export function getQuotes(): string[] {
+  return quotesData as string[];
+}
 
 /**
  * Get site metadata for SEO
