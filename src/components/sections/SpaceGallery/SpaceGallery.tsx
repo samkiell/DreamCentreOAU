@@ -20,8 +20,10 @@ export function SpaceGallery() {
   // Handle scroll to update active index
   const handleScroll = () => {
     if (!scrollRef.current) return;
-    const { scrollLeft, clientWidth } = scrollRef.current;
-    const index = Math.round(scrollLeft / (clientWidth * 0.7)); // Adjusted for slide width
+    const { scrollLeft, scrollWidth } = scrollRef.current;
+    const itemWidth = scrollWidth / images.length;
+    const index = Math.round(scrollLeft / itemWidth);
+    
     if (index !== activeIndex && index >= 0 && index < images.length) {
       setActiveIndex(index);
     }
@@ -29,16 +31,28 @@ export function SpaceGallery() {
 
   const scrollTo = (index: number) => {
     if (!scrollRef.current) return;
-    const slideWidth = scrollRef.current.scrollWidth / images.length;
-    scrollRef.current.scrollTo({
-      left: slideWidth * index,
-      behavior: 'smooth'
-    });
+    
+    // Find the actual element to scroll to for perfect centering with snap
+    const targetElement = scrollRef.current.children[index] as HTMLElement;
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
     setActiveIndex(index);
   };
 
-  const next = () => scrollTo((activeIndex + 1) % images.length);
-  const prev = () => scrollTo((activeIndex - 1 + images.length) % images.length);
+  const next = (e: React.MouseEvent) => {
+    e.preventDefault();
+    scrollTo((activeIndex + 1) % images.length);
+  };
+  
+  const prev = (e: React.MouseEvent) => {
+    e.preventDefault();
+    scrollTo((activeIndex - 1 + images.length) % images.length);
+  };
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
