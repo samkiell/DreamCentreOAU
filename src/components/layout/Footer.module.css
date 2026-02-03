@@ -19,14 +19,6 @@
   gap: var(--space-2);
 }
 
-.footerLogo {
-  width: 200px;
-  height: 200px;
-  border-radius: var(--radius-md);
-  object-fit: contain;
-  margin-bottom: var(--space-4);
-}
-
 .institutionName {
   font-family: var(--font-heading);
   font-size: var(--text-xl);

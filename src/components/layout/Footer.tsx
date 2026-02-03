@@ -18,13 +18,6 @@ export function Footer() {
       <Container size="default">
         <div className={styles.inner}>
           <div className={styles.branding}>
-            <Image 
-              src="/assets/logo.jpg" 
-              alt="Dream Centre Logo" 
-              width={200} 
-              height={200}
-              className={styles.footerLogo}
-            />
             <span className={styles.institutionName}>
               Senator Oluremi Tinubu Dream Centre
             </span>

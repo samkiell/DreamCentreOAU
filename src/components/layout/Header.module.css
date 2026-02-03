@@ -25,7 +25,7 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-4);
   text-decoration: none;
   transition: opacity var(--transition-fast);
 }
@@ -35,18 +35,24 @@
 }
 
 .logoImage {
-  width: 100px;
-  height: 100px;
-  border-radius: var(--radius-md);
+  width: 180px;
+  height: auto;
+  min-height: 80px;
   object-fit: contain;
 }
 
-.logoText {
+.logoTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoTitle {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-2xl);
   font-weight: var(--weight-normal);
   color: var(--color-deep);
   letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-tight);
 }
 
 .logoAccent {
@@ -184,6 +190,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .header {
+    padding: var(--space-2) 0;
+  }
+
   .nav {
     display: none;
   }
@@ -193,15 +203,10 @@
   }
   
   .logoImage {
-    width: 60px;
-    height: 60px;
+    width: 120px;
   }
   
-  .logoText {
-    display: none;
-  }
-  
-  .logoAccent {
+  .logoTextContainer {
     display: none;
   }
 }
