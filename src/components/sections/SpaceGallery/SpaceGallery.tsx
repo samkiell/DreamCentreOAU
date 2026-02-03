@@ -121,38 +121,39 @@ export function SpaceGallery() {
             ))}
           </div>
 
-          <div className={styles.controls}>
-            <button 
-              onClick={prev} 
-              className={styles.arrow} 
-              aria-label="Previous image"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6"/>
-              </svg>
-            </button>
-            
-            <div className={styles.indicators}>
-              {images.map((_, idx) => (
-                <button
-                  key={idx}
-                  className={cn(styles.dot, activeIndex === idx && styles.dotActive)}
-                  onClick={() => scrollTo(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
+        </div>
 
-            <button 
-              onClick={next} 
-              className={styles.arrow} 
-              aria-label="Next image"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 18l6-6-6-6"/>
-              </svg>
-            </button>
+        <div className={styles.controls}>
+          <button 
+            onClick={prev} 
+            className={styles.arrow} 
+            aria-label="Previous image"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          
+          <div className={styles.indicators}>
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                className={cn(styles.dot, activeIndex === idx && styles.dotActive)}
+                onClick={() => scrollTo(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
           </div>
+
+          <button 
+            onClick={next} 
+            className={styles.arrow} 
+            aria-label="Next image"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
         </div>
       </Container>
 
