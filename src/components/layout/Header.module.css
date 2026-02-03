@@ -23,17 +23,30 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+.logoImage {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.logoText {
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: var(--weight-normal);
   color: var(--color-deep);
   letter-spacing: var(--tracking-wide);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.logo:hover {
-  color: var(--color-earth);
 }
 
 .logoAccent {

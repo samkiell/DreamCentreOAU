@@ -7,6 +7,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { useScrolledPast } from '@/hooks';
 import { Container } from '@/components/ui';
@@ -45,8 +46,16 @@ export function Header() {
       <Container>
         <div className={styles.inner}>
           <Link href="/" className={styles.logo}>
-            Dream Centre
-            <span className={styles.logoAccent}>at Obafemi Awolowo University</span>
+
+            <div className={styles.logoText}>
+                         <Image 
+              src="/assets/logo.jpg" 
+              alt="Dream Centre Logo" 
+              width={100} 
+              height={100}
+              className={styles.logoImage}
+            />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
