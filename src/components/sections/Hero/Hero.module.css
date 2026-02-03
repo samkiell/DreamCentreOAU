@@ -17,7 +17,8 @@
 .backgroundImage {
   object-fit: cover;
   object-position: center;
-  opacity: 0.15;
+  opacity: 0.35;
+  filter: sepia(0.2) contrast(1.1);
 }
 
 .overlay {
@@ -25,9 +26,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    var(--color-canvas) 0%,
-    transparent 30%,
-    transparent 70%,
+    rgba(250, 247, 242, 0.7) 0%,
+    rgba(250, 247, 242, 0.2) 50%,
     var(--color-canvas) 100%
   );
   z-index: 1;
