@@ -49,7 +49,7 @@ export function Header() {
             <Image 
               src="/assets/logo_nobg.png" 
               alt="Dream Centre Logo" 
-              width={320} 
+              width={450} 
               height={120}
               className={styles.logoImage}
               priority

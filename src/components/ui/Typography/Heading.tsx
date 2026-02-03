@@ -1,8 +1,4 @@
-/**
- * Heading Component — Dream Centre
- * Semantic heading with visual level control
- */
-
+import React from 'react';
 import { cn } from '@/lib/utils';
 import type { HeadingProps, HeadingLevel } from '@/types/components';
 import styles from './Typography.module.css';
