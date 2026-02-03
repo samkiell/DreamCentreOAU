@@ -18,7 +18,8 @@
     "role": "leadership",
     "image": {
       "src": "/images/stakeholders/vice-chancellor.jpg",
-      "alt": "Portrait of the Vice-Chancellor"
+      "alt": "Portrait of the Vice-Chancellor",
+      "position": "center 15%"
     },
     "order": 2
   }

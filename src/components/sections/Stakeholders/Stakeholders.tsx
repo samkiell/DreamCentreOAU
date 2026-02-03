@@ -34,6 +34,7 @@ export function Stakeholders() {
                   fill
                   className={styles.image}
                   sizes="180px"
+                  style={{ objectPosition: stakeholder.image.position || 'center center' }}
                 />
               </div>
               <h3 className={styles.name}>{stakeholder.name}</h3>

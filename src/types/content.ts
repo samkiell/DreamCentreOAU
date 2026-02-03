@@ -42,6 +42,7 @@ export interface Stakeholder {
   image: {
     src: string;
     alt: string;
+    position?: string;
   };
   bio?: string;
   order: number;

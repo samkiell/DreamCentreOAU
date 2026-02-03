@@ -41,8 +41,8 @@ export interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
 export interface OptimizedImageProps {
   src: string;
   alt: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   priority?: boolean;
   fill?: boolean;
   className?: string;
@@ -50,6 +50,7 @@ export interface OptimizedImageProps {
   quality?: number;
   placeholder?: 'blur' | 'empty';
   blurDataURL?: string;
+  style?: React.CSSProperties;
 }
 
 /** Section wrapper props */
