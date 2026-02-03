@@ -261,7 +261,7 @@ Ooni of Ife (Donor/Builder).
 NITDA (Tech Infrastructure).
 
 Obafemi Awolowo University (Host).
-
+/
 6.1.5 Information Gaps
 
 Confirmed details not yet available include the full program curriculum, long-term NGO partnerships, exact operational staffing structure, and a dedicated official website.
