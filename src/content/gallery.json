@@ -2,28 +2,49 @@
   {
     "id": "interior-hall",
     "src": "/images/gallery/main-hall.jpg",
-    "alt": "Students and visitors gathering in the main hall of the Dream Centre, a spacious area designed for workshops and community interaction.",
-    "caption": "The Main Hall",
+    "alt": "Modern main hall of the Dream Centre with student activity.",
+    "caption": "The Hub of Innovation",
     "width": 1600,
-    "height": 1067,
-    "category": "interior"
+    "height": 1067
   },
   {
     "id": "interior-study",
     "src": "/images/gallery/study-nook.jpg",
-    "alt": "A peaceful reading niche within the Centre, featuring a unique artisanal table and curated bookshelves.",
+    "alt": "Peaceful study corner with artisanal furniture.",
     "caption": "Quiet Reflection",
     "width": 1600,
-    "height": 1067,
-    "category": "interior"
+    "height": 1067
   },
   {
-    "id": "interior-collaboration",
-    "src": "/images/gallery/tech-collaboration.jpg",
-    "alt": "Modern interior space with integrated technology and collaborative seating for digital innovation.",
-    "caption": "Collaboration Hub",
+    "id": "tech-innovation",
+    "src": "/images/gallery/tech-hall.jpg",
+    "alt": "Students collaborating in the technology-enabled workshop space.",
+    "caption": "Digital Innovation Lab",
     "width": 1600,
-    "height": 1067,
-    "category": "interior"
+    "height": 1067
+  },
+  {
+    "id": "library-perspective",
+    "src": "/images/gallery/library-entrance.jpg",
+    "alt": "Entryway to the Dream Centre library.",
+    "caption": "Gateway to Knowledge",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "mural-close",
+    "src": "/images/gallery/mural-detail.jpg",
+    "alt": "Artistic mural detail in the stairwell.",
+    "caption": "Inspirational Artistry",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "workshop-session",
+    "src": "/images/gallery/meeting-room.jpg",
+    "alt": "Collaborative workshop session in progress.",
+    "caption": "Mentorship in Action",
+    "width": 1600,
+    "height": 1067
   }
 ]
