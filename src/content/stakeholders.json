@@ -12,15 +12,15 @@
     "order": 1
   },
   {
-    "id": "leadership-1",
-    "name": "Academic Leadership",
-    "title": "Dream Centre Program Lead",
+    "id": "vice-chancellor",
+    "name": "Professor Adebayo Simeon Bamire",
+    "title": "Vice-Chancellor, Obafemi Awolowo University",
     "role": "leadership",
     "image": {
       "src": "/images/stakeholders/academic-lead.jpg",
-      "alt": "Representative of the Dream Centre's academic and mentorship leadership."
+      "alt": "Representative photo of the university leadership at the Dream Centre."
     },
-    "bio": "Guiding the digital mentorship and innovation programs for students at OAU.",
+    "bio": "The Vice-Chancellor of Obafemi Awolowo University, committed to fostering innovation and academic excellence.",
     "order": 2
   }
 ]
