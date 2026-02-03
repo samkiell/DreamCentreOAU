@@ -8,10 +8,170 @@
     "height": 1067
   },
   {
+    "id": "stakeholders-discuss",
+    "src": "/images/gallery/stakeholders-discuss.jpg",
+    "alt": "Stakeholders discussing the vision of the Dream Centre.",
+    "caption": "Visionary Dialogues",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "outdoor-presentation",
+    "src": "/images/gallery/outdoor-presentation.jpg",
+    "alt": "Interactive outdoor presentation session.",
+    "caption": "Interactive Learning",
+    "width": 1600,
+    "height": 1067
+  },
+  {
     "id": "training-session",
     "src": "/images/gallery/training-session.jpg",
     "alt": "Students engaged in a digital literacy workshop session.",
     "caption": "Shaping Digital Futures",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "mural-footprint",
+    "src": "/images/gallery/mural-footprint.jpg",
+    "alt": "The iconic footprint mural: 'A journey of 1000 miles begins with a single step'.",
+    "caption": "The First Step",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "outside-gathering",
+    "src": "/images/gallery/outdoor-workshop.jpg",
+    "alt": "Students and mentors gathering for an outdoor session.",
+    "caption": "Community Engagement",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "leadership-address",
+    "src": "/images/gallery/leadership-address.jpg",
+    "alt": "Leadership addressing a group of students.",
+    "caption": "Pathways to Leadership",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "personal-library",
+    "src": "/images/gallery/personal-library.jpg",
+    "alt": "A peaceful reading nook in the library.",
+    "caption": "A Sanctuary for Study",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "presidential-portrait",
+    "src": "/images/gallery/presidential-portrait.jpg",
+    "alt": "A framed portrait representing the legacy of leadership.",
+    "caption": "Legacy & Honour",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "startup-hub",
+    "src": "/images/gallery/startup-hub.jpg",
+    "alt": "The 'Startup' collaboration zone for aspiring entrepreneurs.",
+    "caption": "Entrepreneurial Spirit",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "stairwell-view",
+    "src": "/images/gallery/stairwell-view.jpg",
+    "alt": "A modern stairwell view with intentional design.",
+    "caption": "Elevated Design",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "exterior-mural",
+    "src": "/images/gallery/exterior-mural.jpg",
+    "alt": "Vibrant exterior mural on the Dream Centre building.",
+    "caption": "Art & Architecture",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "collaboration-space",
+    "src": "/images/gallery/collaboration-space.jpg",
+    "alt": "Dynamic workspace for group projects and workshops.",
+    "caption": "Co-innovation Hub",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "tech-lab-interior",
+    "src": "/images/gallery/tech-lab-interior.jpg",
+    "alt": "Inside the state-of-the-art technology lab.",
+    "caption": "Digital Mastery",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "exterior-walkway",
+    "src": "/images/gallery/exterior-walkway.jpg",
+    "alt": "The modern exterior walkway and facade.",
+    "caption": "Modern Landmarks",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "achievements-wall",
+    "src": "/images/gallery/achievements-wall.jpg",
+    "alt": "A gallery wall displaying awards and milestones.",
+    "caption": "Celebrating Excellence",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "student-focus",
+    "src": "/images/gallery/student-focus.jpg",
+    "alt": "A student focused on learning during a session.",
+    "caption": "Focused on the Future",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "community-gathering",
+    "src": "/images/gallery/community-gathering.jpg",
+    "alt": "A large gathering of the Dream Centre community.",
+    "caption": "Strength in Unity",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "mentorship-moment",
+    "src": "/images/gallery/mentorship-moment.jpg",
+    "alt": "A one-on-one mentorship moment.",
+    "caption": "Expert Guidance",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "discussion-circle",
+    "src": "/images/gallery/discussion-circle.jpg",
+    "alt": "Students in a peer discussion group.",
+    "caption": "Shared Knowledge",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "awards-tribute",
+    "src": "/images/gallery/awards-tribute.jpg",
+    "alt": "Tribute artifacts to Her Excellency Senator Oluremi Tinubu.",
+    "caption": "Tokens of Appreciation",
+    "width": 1600,
+    "height": 1067
+  },
+  {
+    "id": "campus-view",
+    "src": "/images/gallery/campus-view.jpg",
+    "alt": "A view of the surrounding campus from the Dream Centre.",
+    "caption": "Academic Horizon",
     "width": 1600,
     "height": 1067
   },
@@ -24,14 +184,6 @@
     "height": 1067
   },
   {
-    "id": "interior-study",
-    "src": "/images/gallery/study-nook.jpg",
-    "alt": "Peaceful study corner with artisanal furniture.",
-    "caption": "Quiet Reflection",
-    "width": 1600,
-    "height": 1067
-  },
-  {
     "id": "library-interior",
     "src": "/images/gallery/library-interior.jpg",
     "alt": "Bookshelves and the library entrance at the Dream Centre.",
@@ -40,42 +192,10 @@
     "height": 1067
   },
   {
-    "id": "tech-innovation",
-    "src": "/images/gallery/tech-hall.jpg",
-    "alt": "Students collaborating in the technology-enabled workshop space.",
-    "caption": "Collaboration Hub",
-    "width": 1600,
-    "height": 1067
-  },
-  {
-    "id": "outdoor-mentorship",
-    "src": "/images/gallery/outdoor-mentorship.jpg",
-    "alt": "Students participating in an outdoor mentorship session.",
-    "caption": "Knowledge Exchange",
-    "width": 1600,
-    "height": 1067
-  },
-  {
-    "id": "community-interaction",
-    "src": "/images/gallery/community-interaction.jpg",
-    "alt": "Stakeholders and students outside the Dream Centre.",
-    "caption": "Unified Vision",
-    "width": 1600,
-    "height": 1067
-  },
-  {
     "id": "memorabilia",
     "src": "/images/gallery/memorabilia.jpg",
     "alt": "Personal artifacts and recognition shelf in the centre.",
     "caption": "Tokens of Excellence",
-    "width": 1600,
-    "height": 1067
-  },
-  {
-    "id": "mural-close",
-    "src": "/images/gallery/mural-detail.jpg",
-    "alt": "Artistic mural detail in the stairwell.",
-    "caption": "Every Step Counts",
     "width": 1600,
     "height": 1067
   }
