@@ -25,7 +25,6 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
   text-decoration: none;
   transition: opacity var(--transition-fast);
 }
@@ -39,31 +38,6 @@
   height: auto;
   min-height: 80px;
   object-fit: contain;
-}
-
-.logoTextContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.logoTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-2xl);
-  font-weight: var(--weight-normal);
-  color: var(--color-deep);
-  letter-spacing: var(--tracking-wide);
-  line-height: var(--leading-tight);
-}
-
-.logoAccent {
-  display: block;
-  font-family: var(--font-ui);
-  font-size: var(--text-xs);
-  font-weight: var(--weight-medium);
-  color: var(--color-text-muted);
-  letter-spacing: var(--tracking-widest);
-  text-transform: uppercase;
-  margin-top: var(--space-1);
 }
 
 /* Desktop Navigation */
@@ -204,10 +178,6 @@
   
   .logoImage {
     width: 120px;
-  }
-  
-  .logoTextContainer {
-    display: none;
   }
 }
 

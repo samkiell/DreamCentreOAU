@@ -47,17 +47,13 @@ export function Header() {
         <div className={styles.inner}>
           <Link href="/" className={styles.logo}>
             <Image 
-              src="/assets/logo.jpg" 
+              src="/assets/logo_nobg.png" 
               alt="Dream Centre Logo" 
               width={180} 
               height={180}
               className={styles.logoImage}
               priority
             />
-            <div className={styles.logoTextContainer}>
-              <span className={styles.logoTitle}>Dream Centre</span>
-              <span className={styles.logoAccent}>at Obafemi Awolowo University</span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
