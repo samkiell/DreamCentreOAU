@@ -23,6 +23,9 @@ export function Footer() {
             <span className={styles.universityName}>
               Obafemi Awolowo University, Ile-Ife
             </span>
+            <span className={styles.commissioning}>
+              Commissioned 29 January 2026
+            </span>
           </div>
 
           <div className={styles.divider} aria-hidden="true" />
