@@ -1,0 +1,16 @@
+{
+  "heading": "Visit Us",
+  "address": [
+    "Senator Oluremi Tinubu Dream Centre",
+    "Obafemi Awolowo University",
+    "Ile-Ife, Osun State",
+    "Nigeria"
+  ],
+  "email": "dreamcentre@oauife.edu.ng",
+  "phone": "+234 XXX XXX XXXX",
+  "hours": "Monday – Friday, 9:00 AM – 5:00 PM",
+  "coordinates": {
+    "lat": 7.5216,
+    "lng": 4.5277
+  }
+}
