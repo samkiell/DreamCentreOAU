@@ -78,10 +78,26 @@ export interface HeroContent {
   heading: string;
   subheading?: string;
   tagline?: string;
+  commissionedDate?: string;
   image: {
     src: string;
     alt: string;
   };
+}
+
+/** Single feature/program item */
+export interface Feature {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+/** Features section content */
+export interface FeaturesContent {
+  heading: string;
+  subheading: string;
+  features: Feature[];
 }
 
 /** Navigation link */

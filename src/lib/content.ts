@@ -12,6 +12,7 @@ import type {
   GalleryImage, 
   ContactInfo,
   HeroContent,
+  FeaturesContent,
 } from '@/types/content';
 
 // Static imports from JSON files
@@ -22,6 +23,7 @@ import missionData from '@/content/mission.json';
 import stakeholdersData from '@/content/stakeholders.json';
 import galleryData from '@/content/gallery.json';
 import contactData from '@/content/contact.json';
+import featuresData from '@/content/features.json';
 
 /**
  * Get site metadata for SEO
@@ -49,6 +51,13 @@ export function getPhilosophy(): PhilosophyContent {
  */
 export function getMission(): MissionContent {
   return missionData as MissionContent;
+}
+
+/**
+ * Get features/programs content
+ */
+export function getFeatures(): FeaturesContent {
+  return featuresData as FeaturesContent;
 }
 
 /**
@@ -91,3 +100,4 @@ export function getGalleryImages(category?: GalleryImage['category']): GalleryIm
 export function getContact(): ContactInfo {
   return contactData as ContactInfo;
 }
+
