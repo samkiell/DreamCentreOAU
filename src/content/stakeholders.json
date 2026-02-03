@@ -30,7 +30,8 @@
     "role": "leadership",
     "image": {
       "src": "/images/stakeholders/nitda-dg.jpg",
-      "alt": "Portrait of the NITDA Director General"
+      "alt": "Portrait of the NITDA Director General",
+      "position": "center 20%"
     },
     "bio": "Equipped the facility with IT-enabled devices and AI tools, using digital technology, artificial intelligence, and storytelling to preserve our history.",
     "order": 3

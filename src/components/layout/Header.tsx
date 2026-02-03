@@ -1,10 +1,11 @@
 /**
  * Header Component — Dream Centre
- * Minimal, elegant header with scroll-triggered styling
+ * Minimal, elegant header with scroll-triggered styling and mobile hamburger menu
  */
 
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useScrolledPast } from '@/hooks';
@@ -21,6 +22,23 @@ const navLinks = [
 
 export function Header() {
   const isScrolled = useScrolledPast(50);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu when clicking outside or on a link
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className={cn(styles.header, isScrolled && styles.scrolled)}>
@@ -31,6 +49,7 @@ export function Header() {
             <span className={styles.logoAccent}>at Obafemi Awolowo University</span>
           </Link>
 
+          {/* Desktop Navigation */}
           <nav className={styles.nav} aria-label="Main navigation">
             {navLinks.map((link) => (
               <a key={link.href} href={link.href} className={styles.navLink}>
@@ -38,8 +57,45 @@ export function Header() {
               </a>
             ))}
           </nav>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            className={cn(styles.hamburger, isMenuOpen && styles.hamburgerOpen)}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
+          >
+            <span className={styles.hamburgerLine} />
+            <span className={styles.hamburgerLine} />
+            <span className={styles.hamburgerLine} />
+          </button>
         </div>
       </Container>
+
+      {/* Mobile Menu Overlay */}
+      <div className={cn(styles.mobileMenu, isMenuOpen && styles.mobileMenuOpen)}>
+        <nav className={styles.mobileNav} aria-label="Mobile navigation">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={styles.mobileNavLink}
+              onClick={handleLinkClick}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      {/* Backdrop */}
+      {isMenuOpen && (
+        <div
+          className={styles.backdrop}
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
     </header>
   );
 }
