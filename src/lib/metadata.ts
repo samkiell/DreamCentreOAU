@@ -14,11 +14,15 @@ export function generateSiteMetadata(): Metadata {
   
   return {
     metadataBase: new URL(siteData.url),
+    alternates: {
+      canonical: '/',
+    },
     title: {
       default: siteData.title,
       template: `%s | ${siteData.title}`,
     },
     description: siteData.description,
+    keywords: siteData.keywords,
     openGraph: {
       title: siteData.title,
       description: siteData.description,

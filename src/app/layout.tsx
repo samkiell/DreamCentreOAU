@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { fontVariables } from '@/lib/fonts';
 import { generateSiteMetadata } from '@/lib/metadata';
 import { Header, Footer } from '@/components/layout';
-import { SkipLink } from '@/components/shared';
+import { SkipLink, JsonLd } from '@/components/shared';
 import './globals.css';
 
 export const metadata: Metadata = generateSiteMetadata();
@@ -20,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fontVariables}>
+        <JsonLd />
         <SkipLink />
         <Header />
         <main id="main-content">

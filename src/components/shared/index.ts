@@ -4,3 +4,4 @@
  */
 
 export { SkipLink } from './SkipLink';
+export { JsonLd } from './JsonLd';

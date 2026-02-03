@@ -10,6 +10,7 @@ export interface SiteMetadata {
   url: string;
   ogImage: string;
   locale: string;
+  keywords: string;
 }
 
 /** Philosophy and mission content */
