@@ -61,14 +61,20 @@
   margin-bottom: var(--space-6);
 }
 
-.subheading {
+.subheadingList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: center;
+  margin: 0 auto;
+}
+
+.subheadingItem {
   font-family: var(--font-body);
   font-size: var(--text-xl);
   font-weight: var(--weight-normal);
   line-height: var(--leading-relaxed);
   color: var(--color-text-secondary);
-  max-width: 32ch;
-  margin: 0 auto;
 }
 
 .scrollIndicator {
@@ -99,7 +105,7 @@
     font-size: var(--text-4xl);
   }
   
-  .subheading {
+  .subheadingItem {
     font-size: var(--text-lg);
   }
   
@@ -113,7 +119,7 @@
     font-size: var(--text-6xl);
   }
   
-  .subheading {
+  .subheadingItem {
     font-size: var(--text-2xl);
   }
 }

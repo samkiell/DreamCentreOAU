@@ -36,7 +36,13 @@ export function Hero() {
         </h1>
         
         {content.subheading && (
-          <p className={styles.subheading}>{content.subheading}</p>
+          <div className={styles.subheadingList}>
+            {content.subheading.split('•').map((item, index) => (
+              <span key={index} className={styles.subheadingItem}>
+                {item.trim()}
+              </span>
+            ))}
+          </div>
         )}
       </div>
 
