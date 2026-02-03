@@ -1,0 +1,30 @@
+{
+  "heading": "What We Offer",
+  "subheading": "Programs & Facilities",
+  "features": [
+    {
+      "id": "storytelling-room",
+      "title": "Storytelling Room",
+      "description": "An interactive space for sharing life experiences through AI-powered digital media. Using artificial intelligence and storytelling to preserve our history and inspire the next generation.",
+      "icon": "storytelling"
+    },
+    {
+      "id": "inspirational-library",
+      "title": "Inspirational Library",
+      "description": "Houses inspirational books including the First Lady's four-part autobiography 'The Journey of Grace'. A resource for reflection and personal development.",
+      "icon": "library"
+    },
+    {
+      "id": "leadership-training",
+      "title": "Leadership Training",
+      "description": "Mentorship programs emphasizing discipline, resilience, and vision. Guidance through meaningful relationships with experienced professionals and academics.",
+      "icon": "leadership"
+    },
+    {
+      "id": "digital-creativity",
+      "title": "Digital Creativity Hub",
+      "description": "IT-enabled devices supplied by NITDA for hands-on exposure to innovation tools. A space where technology meets personal development.",
+      "icon": "digital"
+    }
+  ]
+}
