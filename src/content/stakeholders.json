@@ -30,7 +30,8 @@
     "role": "leadership",
     "image": {
       "src": "/images/stakeholders/nitda-dg.jpg",
-      "alt": "Portrait of the NITDA Director General"
+      "alt": "Portrait of the NITDA Director General",
+      "position": "top center"
     },
     "bio": "Equipped the facility with IT-enabled devices and AI tools, using digital technology, artificial intelligence, and storytelling to preserve our history.",
     "order": 3
@@ -42,7 +43,8 @@
     "role": "leadership",
     "image": {
       "src": "/images/stakeholders/vice-chancellor.jpg",
-      "alt": "Portrait of the Vice-Chancellor"
+      "alt": "Portrait of the Vice-Chancellor",
+      "position": "top center"
     },
     "bio": "Provided the land and hosts the centre at OAU, a premier institution chosen for its legacy of academic excellence and youth development.",
     "order": 4
