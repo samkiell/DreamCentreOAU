@@ -88,10 +88,10 @@ export interface HeroContent {
   subheading?: string;
   tagline?: string;
   commissionedDate?: string;
-  image: {
+  images: Array<{
     src: string;
     alt: string;
-  };
+  }>;
 }
 
 /** Single feature/program item */

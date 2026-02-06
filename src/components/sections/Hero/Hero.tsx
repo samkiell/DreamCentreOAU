@@ -1,34 +1,56 @@
 /**
  * Hero Section — Dream Centre
- * Full-viewport hero with elegant typography and subtle background
+ * Restrained carousel with inauguration series and elegant typography
  */
 
+'use client';
+
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { getHeroContent } from '@/lib/content';
 import { OptimizedImage } from '@/components/ui';
-import { MaskReveal, SectionReveal, BreathingParallax } from '@/components/shared';
+import { MaskReveal, SectionReveal } from '@/components/shared';
 import styles from './Hero.module.css';
 
 export function Hero() {
   const content = getHeroContent();
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Slow, restrained carousel transition
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % content.images.length);
+    }, 8000); // 8 seconds for a calm pace
+    return () => clearInterval(timer);
+  }, [content.images.length]);
 
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
-      {/* Background Image with Breathing Parallax */}
+      {/* Background Carousel */}
       <div className={styles.background}>
-        <BreathingParallax>
-          <OptimizedImage
-            src={content.image.src}
-            alt=""
-            fill
-            priority
-            className={styles.backgroundImage}
-            sizes="100vw"
-          />
-        </BreathingParallax>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentImage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, ease: 'easeInOut' }}
+            className={styles.carouselWrapper}
+          >
+            <OptimizedImage
+              src={content.images[currentImage].src}
+              alt={content.images[currentImage].alt}
+              fill
+              priority
+              className={styles.backgroundImage}
+              sizes="100vw"
+            />
+          </motion.div>
+        </AnimatePresence>
         <div className={styles.overlay} aria-hidden="true" />
       </div>
 
-      {/* Content with Mask Reveal and Section Reveal */}
+      {/* Content */}
       <div className={styles.content}>
         {content.tagline && (
           <SectionReveal delay={0.5} yOffset={10}>
@@ -55,7 +77,7 @@ export function Hero() {
         )}
       </div>
 
-      {/* Scroll Indicator with gentle fade */}
+      {/* Scroll Indicator */}
       <SectionReveal delay={1.5} yOffset={0} duration={2}>
         <div className={styles.scrollIndicator} aria-hidden="true">
           <span>Scroll</span>

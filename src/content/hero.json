@@ -3,8 +3,30 @@
   "subheading": "Inspiration • Mentorship • Digital Innovation",
   "tagline": "Senator Oluremi Tinubu Dream Centre at Obafemi Awolowo University, Ile-Ife",
   "commissionedDate": "29 January 2026",
-  "image": {
-    "src": "/images/hero/bgoverall2.jpg",
-    "alt": "Wide architectural view of the Senator Oluremi Tinubu Dream Centre at Obafemi Awolowo University."
-  }
+  "images": [
+    {
+      "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.51.53 PM.jpeg",
+      "alt": "Inauguration ceremony of the Senator Oluremi Tinubu Dream Centre."
+    },
+    {
+      "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.51.56 PM.jpeg",
+      "alt": "Senator Oluremi Tinubu at the inauguration."
+    },
+    {
+      "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.08 PM.jpeg",
+      "alt": "Stakeholders at the Dream Centre commissioning."
+    },
+    {
+      "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.09 PM.jpeg",
+      "alt": "Dignitaries gathered for the institutional landmark."
+    },
+    {
+      "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.12 PM.jpeg",
+      "alt": "Atmosphere of the inauguration ceremony."
+    },
+    {
+      "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.13 PM.jpeg",
+      "alt": "Legacy architectural view during the event."
+    }
+  ]
 }
