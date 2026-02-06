@@ -4,22 +4,22 @@
    ========================================================================== */
 
 :root {
-  /* Colors — Warm, Earth-Inspired Palette */
-  --color-canvas: #faf7f2; /* Primary background - warm ivory */
-  --color-stone: #e8e0d5; /* Secondary surfaces - sandstone */
-  --color-earth: #b5836a; /* Accent - terracotta clay */
-  --color-deep: #5c4a3d; /* Primary text - cocoa brown */
-  --color-muted-gold: #a68b5b; /* Subtle highlights - aged brass */
-  --color-sage: #8a9a7a; /* Optional natural accent - dusty olive */
+  /* Colors — Institutional Palette */
+  --color-canvas: #ffffff; /* Primary background - White */
+  --color-stone: #ffffff; /* Major surfaces - White */
+  --color-earth: #3c1053; /* Primary Identity & Functional - Imperial Purple */
+  --color-deep: #3c1053; /* Primary Institutional Content - Imperial Purple */
+  --color-muted-gold: #d4af37; /* Accent - Legacy Gold */
+  --color-sage: transparent;
 
   /* Semantic Colors */
-  --color-text-primary: var(--color-deep);
-  --color-text-secondary: #7a6a5a;
-  --color-text-muted: #9a8a7a;
+  --color-text-primary: #1a0a24; /* Maximum clarity - Deepest Purple-Black */
+  --color-text-secondary: rgba(26, 10, 36, 0.7); /* Calm secondary text */
+  --color-text-muted: rgba(26, 10, 36, 0.45); /* Muted institutional text */
   --color-background: var(--color-canvas);
   --color-background-alt: var(--color-stone);
-  --color-border: rgba(92, 74, 61, 0.12);
-  --color-border-strong: rgba(92, 74, 61, 0.25);
+  --color-border: rgba(60, 16, 83, 0.08); /* Subtle institutional divider */
+  --color-border-strong: rgba(60, 16, 83, 0.15);
 
   /* Typography — Font Families */
   --font-heading: "Libre Baskerville", Georgia, "Times New Roman", serif;
@@ -98,16 +98,16 @@
   --radius-xl: 1rem; /* 16px */
   --radius-full: 9999px;
 
-  /* Shadows — Subtle, Warm */
-  --shadow-xs: 0 1px 2px rgba(92, 74, 61, 0.04);
+  /* Shadows — Restrained, Institutional */
+  --shadow-xs: 0 1px 2px rgba(26, 10, 36, 0.04);
   --shadow-sm:
-    0 1px 3px rgba(92, 74, 61, 0.06), 0 1px 2px rgba(92, 74, 61, 0.04);
+    0 1px 3px rgba(26, 10, 36, 0.06), 0 1px 2px rgba(26, 10, 36, 0.04);
   --shadow-md:
-    0 4px 6px rgba(92, 74, 61, 0.06), 0 2px 4px rgba(92, 74, 61, 0.04);
+    0 4px 6px rgba(26, 10, 36, 0.06), 0 2px 4px rgba(26, 10, 36, 0.04);
   --shadow-lg:
-    0 10px 15px rgba(92, 74, 61, 0.06), 0 4px 6px rgba(92, 74, 61, 0.04);
+    0 10px 15px rgba(26, 10, 36, 0.06), 0 4px 6px rgba(26, 10, 36, 0.04);
   --shadow-xl:
-    0 20px 25px rgba(92, 74, 61, 0.08), 0 10px 10px rgba(92, 74, 61, 0.04);
+    0 20px 25px rgba(26, 10, 36, 0.08), 0 10px 10px rgba(26, 10, 36, 0.04);
 
   /* Transitions */
   --transition-fast: 150ms ease;

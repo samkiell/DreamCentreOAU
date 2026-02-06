@@ -170,7 +170,7 @@
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(184, 158, 122, 0.2); /* Soft earth-tone glow */
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25); /* Subtle institutional gold glow */
   filter: brightness(1.02);
 }
 
