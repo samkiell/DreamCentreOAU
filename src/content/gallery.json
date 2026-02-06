@@ -70,6 +70,36 @@
     "category": "inauguration"
   },
   {
+    "id": "hero-building",
+    "src": "/images/hero/hero-building.jpg",
+    "alt": "Architectural view of the Dream Centre building.",
+    "caption": "Institutional Landmark",
+    "width": 1600,
+    "height": 1067,
+    "type": "image",
+    "category": "space"
+  },
+  {
+    "id": "mural-perspective",
+    "src": "/images/philosophy/mural-perspective.jpg",
+    "alt": "Close-up perspective of the center's mural.",
+    "caption": "Philosophical Art",
+    "width": 1600,
+    "height": 1067,
+    "type": "image",
+    "category": "space"
+  },
+  {
+    "id": "recognition-wall",
+    "src": "/images/mission/recognition-wall.jpg",
+    "alt": "Wall honoring partners and stakeholders.",
+    "caption": "Mission Recognition",
+    "width": 1600,
+    "height": 1067,
+    "type": "image",
+    "category": "space"
+  },
+  {
     "id": "exterior-wide",
     "src": "/images/gallery/overall-exterior.jpg",
     "alt": "Wide view of the Senator Oluremi Tinubu Dream Centre building.",
