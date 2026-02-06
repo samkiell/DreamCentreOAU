@@ -1,7 +1,7 @@
 [
   {
     "id": "senator-tinubu",
-    "name": "Senator Oluremi Tinubu",
+    "name": "Senator Oluremi Tinubu CON",
     "title": "First Lady of the Federal Republic of Nigeria",
     "role": "patron",
     "image": {
@@ -14,7 +14,7 @@
   },
   {
     "id": "ooni-ife",
-    "name": "Oba Enitan Adeyeye Ogunwusi",
+    "name": "Oba Enitan Adeyeye Ogunwusi CON",
     "title": "Ooni of Ife",
     "role": "leadership",
     "image": {
