@@ -88,9 +88,10 @@ export interface HeroContent {
   subheading?: string;
   tagline?: string;
   commissionedDate?: string;
-  images: Array<{
+  media: Array<{
     src: string;
     alt: string;
+    type: 'image' | 'video';
   }>;
 }
 

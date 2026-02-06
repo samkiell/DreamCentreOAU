@@ -3,30 +3,41 @@
   "subheading": "Inspiration • Mentorship • Digital Innovation",
   "tagline": "Senator Oluremi Tinubu Dream Centre at Obafemi Awolowo University, Ile-Ife",
   "commissionedDate": "29 January 2026",
-  "images": [
+  "media": [
     {
       "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.51.53 PM.jpeg",
-      "alt": "Inauguration ceremony of the Senator Oluremi Tinubu Dream Centre."
+      "alt": "Inauguration ceremony of the Senator Oluremi Tinubu Dream Centre.",
+      "type": "image"
     },
     {
       "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.51.56 PM.jpeg",
-      "alt": "Senator Oluremi Tinubu at the inauguration."
+      "alt": "Senator Oluremi Tinubu at the inauguration.",
+      "type": "image"
+    },
+    {
+      "src": "/assets/innaugration/WhatsApp Video 2026-02-06 at 8.52.03 PM.mp4",
+      "alt": "Video highlights from the inauguration ceremony.",
+      "type": "video"
     },
     {
       "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.08 PM.jpeg",
-      "alt": "Stakeholders at the Dream Centre commissioning."
+      "alt": "Stakeholders at the Dream Centre commissioning.",
+      "type": "image"
     },
     {
       "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.09 PM.jpeg",
-      "alt": "Dignitaries gathered for the institutional landmark."
+      "alt": "Dignitaries gathered for the institutional landmark.",
+      "type": "image"
     },
     {
       "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.12 PM.jpeg",
-      "alt": "Atmosphere of the inauguration ceremony."
+      "alt": "Atmosphere of the inauguration ceremony.",
+      "type": "image"
     },
     {
       "src": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.13 PM.jpeg",
-      "alt": "Legacy architectural view during the event."
+      "alt": "Legacy architectural view during the event.",
+      "type": "image"
     }
   ]
 }

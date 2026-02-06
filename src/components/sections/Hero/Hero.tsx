@@ -1,6 +1,6 @@
 /**
  * Hero Section — Dream Centre
- * Restrained carousel with inauguration series and elegant typography
+ * Restrained carousel with inauguration series (images and video) and elegant typography
  */
 
 'use client';
@@ -14,15 +14,15 @@ import styles from './Hero.module.css';
 
 export function Hero() {
   const content = getHeroContent();
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // Slow, restrained carousel transition
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % content.images.length);
-    }, 8000); // 8 seconds for a calm pace
+      setCurrentIndex((prev) => (prev + 1) % content.media.length);
+    }, 10000); // 10 seconds to allow videos some time
     return () => clearInterval(timer);
-  }, [content.images.length]);
+  }, [content.media.length]);
 
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
@@ -30,21 +30,32 @@ export function Hero() {
       <div className={styles.background}>
         <AnimatePresence mode="wait">
           <motion.div
-            key={currentImage}
+            key={currentIndex}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 2, ease: 'easeInOut' }}
             className={styles.carouselWrapper}
           >
-            <OptimizedImage
-              src={content.images[currentImage].src}
-              alt={content.images[currentImage].alt}
-              fill
-              priority
-              className={styles.backgroundImage}
-              sizes="100vw"
-            />
+            {content.media[currentIndex].type === 'video' ? (
+              <video
+                src={content.media[currentIndex].src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className={styles.backgroundVideo}
+              />
+            ) : (
+              <OptimizedImage
+                src={content.media[currentIndex].src}
+                alt={content.media[currentIndex].alt}
+                fill
+                priority
+                className={styles.backgroundImage}
+                sizes="100vw"
+              />
+            )}
           </motion.div>
         </AnimatePresence>
         <div className={styles.overlay} aria-hidden="true" />
