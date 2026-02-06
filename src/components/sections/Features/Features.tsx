@@ -4,7 +4,9 @@
  */
 
 import { Container } from '@/components/ui';
+import { SectionReveal } from '@/components/shared';
 import { getFeatures } from '@/lib/content';
+import { clsx } from 'clsx';
 import styles from './Features.module.css';
 
 // Icon components for each feature type
@@ -41,22 +43,30 @@ export function Features() {
       aria-labelledby="features-heading"
     >
       <Container>
-        <header className={styles.header}>
-          <p className={styles.label}>{content.subheading}</p>
-          <h2 id="features-heading" className={styles.heading}>
-            {content.heading}
-          </h2>
-        </header>
+        <SectionReveal>
+          <header className={styles.header}>
+            <p className={styles.label}>{content.subheading}</p>
+            <h2 id="features-heading" className={styles.heading}>
+              {content.heading}
+            </h2>
+          </header>
+        </SectionReveal>
 
         <div className={styles.grid}>
-          {content.features.map((feature) => (
-            <article key={feature.id} className={styles.card}>
-              <div className={styles.iconWrapper}>
-                {icons[feature.icon] || icons.digital}
-              </div>
-              <h3 className={styles.title}>{feature.title}</h3>
-              <p className={styles.description}>{feature.description}</p>
-            </article>
+          {content.features.map((feature, index) => (
+            <SectionReveal 
+              key={feature.id} 
+              delay={0.1 * index}
+              yOffset={20}
+            >
+              <article className={clsx(styles.card, 'hover-weighted')}>
+                <div className={styles.iconWrapper}>
+                  {icons[feature.icon] || icons.digital}
+                </div>
+                <h3 className={styles.title}>{feature.title}</h3>
+                <p className={styles.description}>{feature.description}</p>
+              </article>
+            </SectionReveal>
           ))}
         </div>
       </Container>

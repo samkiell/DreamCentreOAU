@@ -4,6 +4,7 @@
  */
 
 import { Container, OptimizedImage } from '@/components/ui';
+import { SectionReveal } from '@/components/shared';
 import { getStakeholders } from '@/lib/content';
 import styles from './Stakeholders.module.css';
 
@@ -17,32 +18,40 @@ export function Stakeholders() {
       aria-labelledby="stakeholders-heading"
     >
       <Container>
-        <header className={styles.header}>
-          <p className={styles.label}>Leadership</p>
-          <h2 id="stakeholders-heading" className={styles.heading}>
-            Our Guiding Figures
-          </h2>
-        </header>
+        <SectionReveal>
+          <header className={styles.header}>
+            <p className={styles.label}>Leadership</p>
+            <h2 id="stakeholders-heading" className={styles.heading}>
+              Our Guiding Figures
+            </h2>
+          </header>
+        </SectionReveal>
 
         <div className={styles.grid}>
-          {stakeholders.map((stakeholder) => (
-            <article key={stakeholder.id} className={styles.card}>
-              <div className={styles.imageWrapper}>
-                <OptimizedImage
-                  src={stakeholder.image.src}
-                  alt={stakeholder.image.alt}
-                  fill
-                  className={styles.image}
-                  sizes="180px"
-                  style={{ objectPosition: stakeholder.image.position || 'center center' }}
-                />
-              </div>
-              <h3 className={styles.name}>{stakeholder.name}</h3>
-              <p className={styles.title}>{stakeholder.title}</p>
-              {stakeholder.bio && (
-                <p className={styles.bio}>{stakeholder.bio}</p>
-              )}
-            </article>
+          {stakeholders.map((stakeholder, index) => (
+            <SectionReveal 
+              key={stakeholder.id} 
+              delay={0.1 * index}
+              yOffset={20}
+            >
+              <article className={styles.card}>
+                <div className={styles.imageWrapper}>
+                  <OptimizedImage
+                    src={stakeholder.image.src}
+                    alt={stakeholder.image.alt}
+                    fill
+                    className={styles.image}
+                    sizes="180px"
+                    style={{ objectPosition: stakeholder.image.position || 'center center' }}
+                  />
+                </div>
+                <h3 className={styles.name}>{stakeholder.name}</h3>
+                <p className={styles.title}>{stakeholder.title}</p>
+                {stakeholder.bio && (
+                  <p className={styles.bio}>{stakeholder.bio}</p>
+                )}
+              </article>
+            </SectionReveal>
           ))}
         </div>
       </Container>
