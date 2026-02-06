@@ -1,5 +1,15 @@
 [
   {
+    "id": "vid-overview-primary",
+    "src": "/assets/overview.mp4",
+    "alt": "Comprehensive overview of the Senator Oluremi Tinubu Dream Centre.",
+    "caption": "The Dream Centre: A Visual Journey",
+    "width": 1920,
+    "height": 1080,
+    "type": "video",
+    "category": "space"
+  },
+  {
     "id": "vid-inauguration-highlight",
     "src": "/assets/innaugration/WhatsApp Video 2026-02-06 at 8.52.03 PM.mp4",
     "alt": "Senator Oluremi Tinubu and stakeholders during the inauguration ceremony.",
