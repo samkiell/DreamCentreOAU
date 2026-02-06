@@ -7,6 +7,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Container, OptimizedImage } from '@/components/ui';
+import { SectionReveal } from '@/components/shared';
 import { getGalleryImages } from '@/lib/content';
 import { cn } from '@/lib/utils';
 import styles from './SpaceGallery.module.css';
@@ -97,78 +98,83 @@ export function SpaceGallery() {
       aria-labelledby="gallery-heading"
     >
       <Container size="wide">
-        <header className={styles.header}>
-          <p className={styles.label}>
-            The Space
-          </p>
-          <h2 id="gallery-heading" className={styles.heading}>
-            A Place of Quiet Inspiration
-          </h2>
-        </header>
+        <SectionReveal>
+          <header className={styles.header}>
+            <p className={styles.label}>
+              The Space
+            </p>
+            <h2 id="gallery-heading" className={styles.heading}>
+              A Place of Quiet Inspiration
+            </h2>
+          </header>
+        </SectionReveal>
 
-        <div className={styles.carouselContainer}>
-          <div 
-            className={styles.viewport} 
-            ref={scrollRef}
-            onScroll={handleScroll}
-          >
-            {images.map((image, idx) => (
-              <figure 
-                key={image.id} 
-                className={cn(styles.slide, activeIndex === idx && styles.active)}
-                onClick={() => openLightbox(idx)}
-                style={{ cursor: 'zoom-in' }}
-              >
-                <OptimizedImage
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className={styles.image}
-                  sizes="(max-width: 768px) 100vw, 800px"
+        <SectionReveal delay={0.2}>
+          <div className={styles.carouselContainer}>
+            <div 
+              className={styles.viewport} 
+              ref={scrollRef}
+              onScroll={handleScroll}
+            >
+              {images.map((image, idx) => (
+                <figure 
+                  key={image.id} 
+                  className={cn(styles.slide, activeIndex === idx && styles.active)}
+                  onClick={() => openLightbox(idx)}
+                  style={{ cursor: 'zoom-in' }}
+                >
+                  <OptimizedImage
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className={styles.image}
+                    sizes="(max-width: 768px) 100vw, 800px"
+                  />
+                  {image.caption && (
+                    <figcaption className={styles.caption}>
+                      <span className={styles.captionText}>{image.caption}</span>
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          </div>
+        </SectionReveal>
+
+        <SectionReveal delay={0.4} yOffset={0}>
+          <div className={styles.controls}>
+            <button 
+              onClick={prev} 
+              className={styles.arrow} 
+              aria-label="Previous image"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            
+            <div className={styles.indicators}>
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={cn(styles.dot, activeIndex === idx && styles.dotActive)}
+                  onClick={() => scrollTo(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
                 />
-                {image.caption && (
-                  <figcaption className={styles.caption}>
-                    <span className={styles.captionText}>{image.caption}</span>
-                  </figcaption>
-                )}
-              </figure>
-            ))}
+              ))}
+            </div>
+
+            <button 
+              onClick={next} 
+              className={styles.arrow} 
+              aria-label="Next image"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
           </div>
-
-        </div>
-
-        <div className={styles.controls}>
-          <button 
-            onClick={prev} 
-            className={styles.arrow} 
-            aria-label="Previous image"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 18l-6-6 6-6"/>
-            </svg>
-          </button>
-          
-          <div className={styles.indicators}>
-            {images.map((_, idx) => (
-              <button
-                key={idx}
-                className={cn(styles.dot, activeIndex === idx && styles.dotActive)}
-                onClick={() => scrollTo(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
-          </div>
-
-          <button 
-            onClick={next} 
-            className={styles.arrow} 
-            aria-label="Next image"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 18l6-6-6-6"/>
-            </svg>
-          </button>
-        </div>
+        </SectionReveal>
       </Container>
 
       {/* Lightbox / Modal */}
