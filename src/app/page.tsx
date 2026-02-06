@@ -15,10 +15,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Stakeholders />
       <Philosophy />
       <Mission />
       <Features />
-      <Stakeholders />
       <SpaceGallery />
       <Contact />
     </>
