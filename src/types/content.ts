@@ -57,15 +57,17 @@ export interface Stakeholder {
   order: number;
 }
 
-/** Gallery image item */
-export interface GalleryImage {
+/** Gallery item (image or video) */
+export interface GalleryItem {
   id: string;
   src: string;
+  thumbnail?: string; // Optional custom thumbnail for videos
   alt: string;
   caption?: string;
   width: number;
   height: number;
-  category?: 'exterior' | 'interior' | 'detail' | 'grounds';
+  type: 'image' | 'video';
+  category: 'inauguration' | 'space' | 'moments';
 }
 
 /** Contact information */

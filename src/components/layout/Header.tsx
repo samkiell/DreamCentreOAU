@@ -14,11 +14,11 @@ import { Container } from '@/components/ui';
 import styles from './Header.module.css';
 
 const navLinks = [
-  { href: '#philosophy', label: 'Philosophy' },
-  { href: '#features', label: 'Programs' },
-  { href: '#stakeholders', label: 'Leadership' },
-  { href: '#gallery', label: 'The Space' },
-  { href: '#contact', label: 'Visit' },
+  { href: '/#philosophy', label: 'Philosophy' },
+  { href: '/#features', label: 'Programs' },
+  { href: '/#stakeholders', label: 'Leadership' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/#contact', label: 'Visit' },
 ];
 
 export function Header() {
@@ -59,9 +59,9 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className={styles.nav} aria-label="Main navigation">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className={styles.navLink}>
+              <Link key={link.href} href={link.href} className={styles.navLink}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -83,14 +83,14 @@ export function Header() {
       <div className={cn(styles.mobileMenu, isMenuOpen && styles.mobileMenuOpen)}>
         <nav className={styles.mobileNav} aria-label="Mobile navigation">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className={styles.mobileNavLink}
               onClick={handleLinkClick}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

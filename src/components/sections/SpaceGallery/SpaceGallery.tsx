@@ -8,12 +8,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { Container, OptimizedImage } from '@/components/ui';
 import { SectionReveal } from '@/components/shared';
-import { getGalleryImages } from '@/lib/content';
+import { getGalleryItems } from '@/lib/content';
 import { cn } from '@/lib/utils';
 import styles from './SpaceGallery.module.css';
 
 export function SpaceGallery() {
-  const images = getGalleryImages();
+  const images = getGalleryItems('space');
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);

@@ -9,7 +9,7 @@ import type {
   PhilosophyContent, 
   MissionContent,
   Stakeholder, 
-  GalleryImage, 
+  GalleryItem, 
   ContactInfo,
   HeroContent,
   FeaturesContent,
@@ -90,16 +90,16 @@ export function getStakeholderById(id: string): Stakeholder | undefined {
 }
 
 /**
- * Get all gallery images, optionally filtered by category
+ * Get all gallery items, optionally filtered by category
  */
-export function getGalleryImages(category?: GalleryImage['category']): GalleryImage[] {
-  const images = galleryData as GalleryImage[];
+export function getGalleryItems(category?: GalleryItem['category']): GalleryItem[] {
+  const items = galleryData as GalleryItem[];
   
   if (category) {
-    return images.filter(img => img.category === category);
+    return items.filter(item => item.category === category);
   }
   
-  return images;
+  return items;
 }
 
 /**
