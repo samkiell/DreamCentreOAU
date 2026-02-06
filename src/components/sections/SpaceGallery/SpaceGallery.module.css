@@ -150,6 +150,44 @@
   }
 }
 
+.footer {
+  text-align: center;
+  margin-top: var(--space-12);
+}
+
+.galleryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-earth);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  transition: all var(--transition-base);
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+.galleryLink:hover {
+  background-color: var(--color-earth);
+  color: var(--color-canvas);
+  border-color: var(--color-earth);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.linkIcon {
+  transition: transform var(--transition-fast);
+}
+
+.galleryLink:hover .linkIcon {
+  transform: translateX(4px);
+}
+
 /* Lightbox Styles */
 .lightboxOverlay {
   position: fixed;

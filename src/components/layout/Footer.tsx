@@ -4,6 +4,7 @@
  */
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Container } from '@/components/ui';
 import { getContact } from '@/lib/content';
 import { getCurrentYear, getMailtoLink } from '@/lib/utils';
@@ -52,6 +53,9 @@ export function Footer() {
             <span className={styles.copyright}>
               © {year} Senator Oluremi Tinubu Dream Centre. All rights reserved.
             </span>
+            <Link href="/gallery" className={styles.footerLink}>
+              Visual Archive
+            </Link>
           </div>
         </div>
       </Container>

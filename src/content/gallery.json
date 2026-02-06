@@ -1,21 +1,21 @@
 [
   {
-    "id": "vid-overview-primary",
+    "id": "vid-inauguration-main",
     "src": "/assets/overview.mp4",
-    "thumbnail": "/images/gallery/overall-exterior.jpg",
-    "alt": "Comprehensive overview of the Senator Oluremi Tinubu Dream Centre.",
-    "caption": "The Dream Centre: A Visual Journey",
+    "thumbnail": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.12 PM.jpeg",
+    "alt": "Comprehensive video highlights of the Senator Oluremi Tinubu Dream Centre inauguration ceremony.",
+    "caption": "Inauguration Highlights",
     "width": 1920,
     "height": 1080,
     "type": "video",
-    "category": "space"
+    "category": "inauguration"
   },
   {
-    "id": "vid-inauguration-highlight",
+    "id": "vid-inauguration-moment",
     "src": "/assets/innaugration/WhatsApp Video 2026-02-06 at 8.52.03 PM.mp4",
-    "thumbnail": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.52.12 PM.jpeg",
-    "alt": "Senator Oluremi Tinubu and stakeholders during the inauguration ceremony.",
-    "caption": "Inauguration Highlights",
+    "thumbnail": "/assets/innaugration/WhatsApp Image 2026-02-06 at 8.51.53 PM.jpeg",
+    "alt": "A short clip capturing a key moment from the Dream Centre's inauguration.",
+    "caption": "Inauguration: Short Highlight",
     "width": 1920,
     "height": 1080,
     "type": "video",

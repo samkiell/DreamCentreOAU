@@ -61,6 +61,28 @@
   color: var(--color-earth);
 }
 
+.navLinkHighlight {
+  color: var(--color-earth);
+  font-weight: var(--weight-semibold);
+  position: relative;
+}
+
+.navLinkHighlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-muted-gold);
+  transform: scaleX(0.8);
+  transition: transform var(--transition-base);
+}
+
+.navLinkHighlight:hover::after {
+  transform: scaleX(1);
+}
+
 /* Hamburger Button */
 .hamburger {
   display: none;

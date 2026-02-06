@@ -59,7 +59,11 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className={styles.nav} aria-label="Main navigation">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={styles.navLink}>
+              <Link 
+                key={link.href} 
+                href={link.href} 
+                className={cn(styles.navLink, link.label === 'Gallery' && styles.navLinkHighlight)}
+              >
                 {link.label}
               </Link>
             ))}
@@ -86,7 +90,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={styles.mobileNavLink}
+              className={cn(styles.mobileNavLink, link.label === 'Gallery' && styles.navLinkHighlight)}
               onClick={handleLinkClick}
             >
               {link.label}
