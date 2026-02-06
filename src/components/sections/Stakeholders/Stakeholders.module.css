@@ -27,12 +27,22 @@
   letter-spacing: var(--tracking-tight);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-12);
-  max-width: var(--max-width-wide);
-  margin: 0 auto;
+.orbitContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--space-8) 0;
+}
+
+.orbitTrack {
+  display: flex;
+  gap: var(--space-20);
+  width: max-content;
+}
+
+.orbitItem {
+  width: 280px;
+  flex-shrink: 0;
 }
 
 /* Stakeholder Card */
@@ -89,9 +99,8 @@
     font-size: var(--text-3xl);
   }
   
-  .grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-10);
+  .orbitItem {
+    width: 220px;
   }
   
   .imageWrapper {

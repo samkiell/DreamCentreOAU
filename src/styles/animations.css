@@ -164,6 +164,16 @@
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
 }
 
+/* Soft Glow — minimal institutional interaction */
+.hover-glow {
+  transition: box-shadow 0.6s ease, filter 0.6s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(184, 158, 122, 0.2); /* Soft earth-tone glow */
+  filter: brightness(1.02);
+}
+
 /* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in,
