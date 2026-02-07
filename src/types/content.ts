@@ -82,6 +82,12 @@ export interface ContactInfo {
     lat: number;
     lng: number;
   };
+  socials?: {
+    instagram?: string;
+    twitter?: string;
+    facebook?: string;
+    linkedin?: string;
+  };
 }
 
 /** Hero section content */
