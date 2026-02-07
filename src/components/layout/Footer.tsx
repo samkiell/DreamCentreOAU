@@ -53,9 +53,6 @@ export function Footer() {
             <span className={styles.copyright}>
               © {year} Senator Oluremi Tinubu Dream Centre. All rights reserved.
             </span>
-            <Link href="/gallery" className={styles.footerLink}>
-              Visual Archive
-            </Link>
           </div>
         </div>
       </Container>
