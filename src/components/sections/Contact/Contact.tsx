@@ -58,6 +58,20 @@ export function Contact() {
                 </div>
               )}
 
+              {contact.socials?.instagram && (
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Instagram</span>
+                  <a 
+                    href={contact.socials.instagram} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={`${styles.detailValue} ${styles.link}`}
+                  >
+                    @dreamcentreoau
+                  </a>
+                </div>
+              )}
+
               {contact.hours && (
                 <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>Hours</span>
