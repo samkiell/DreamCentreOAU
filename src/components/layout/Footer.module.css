@@ -103,6 +103,34 @@
   color: var(--color-earth);
 }
 
+.socials {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-earth);
+  background-color: rgba(139, 115, 85, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.socialIcon:hover {
+  transform: translateY(-3px);
+  background-color: var(--color-earth);
+  color: var(--color-canvas);
+  border-color: var(--color-earth);
+  box-shadow: var(--shadow-sm);
+}
+
 @media (min-width: 768px) {
   .inner {
     gap: var(--space-10);
