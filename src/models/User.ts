@@ -5,6 +5,7 @@ export interface IUser extends Document {
   lastName: string;
   email: string;
   username: string;
+  password: string;
   studentId: string; // The generated DCO-XXX-YY-ZZZ ID
   departmentCode: string;
   faculty: string;
