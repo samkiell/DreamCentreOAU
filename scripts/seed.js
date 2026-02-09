@@ -55,8 +55,8 @@ const facultiesData = [
 const departmentsData = [
   // Computing Science and Engineering (New Faculty)
   {
-    name: "Computer Science with Mathematics",
-    code: "CSM",
+    name: "Computer Science",
+    code: "CSC",
     facultyName: "Computing Science and Engineering",
   },
   {
@@ -80,8 +80,8 @@ const departmentsData = [
     facultyName: "Computing Science and Engineering",
   },
   {
-    name: "Computer Science with Economics",
-    code: "CSW",
+    name: "Intelligent Systems Engineering",
+    code: "ISE",
     facultyName: "Computing Science and Engineering",
   },
 
