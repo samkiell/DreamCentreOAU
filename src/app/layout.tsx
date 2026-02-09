@@ -12,6 +12,8 @@ import './globals.css';
 
 export const metadata: Metadata = generateSiteMetadata();
 
+import { Toaster } from '@/components/shared/Toaster';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,6 +29,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
