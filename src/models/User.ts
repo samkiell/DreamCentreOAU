@@ -6,7 +6,9 @@ export interface IUser extends Document {
   email: string;
   username: string;
   password: string;
-  studentId: string; // The generated DCO-XXX-YY-ZZZ ID
+  studentId: string;
+  matricNumber: string;
+  sex: 'Male' | 'Female';
   departmentCode: string;
   faculty: string;
   admissionYear: number;
@@ -32,7 +34,9 @@ const UserSchema: Schema = new Schema(
       trim: true,
     },
     phoneNumber: { type: String },
+    sex: { type: String, enum: ['Male', 'Female'], required: true },
     profileImage: { type: String },
+    matricNumber: { type: String, required: true, unique: true },
     studentId: {
       type: String,
       unique: true,
@@ -50,7 +54,7 @@ const UserSchema: Schema = new Schema(
     status: {
       type: String,
       enum: ['PENDING', 'AWAITING_APPROVAL', 'ACTIVE', 'SUSPENDED', 'DEACTIVATED'],
-      default: 'PENDING',
+      default: 'ACTIVE',
     },
   },
   {
