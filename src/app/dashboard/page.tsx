@@ -4,7 +4,8 @@ import useSWR from 'swr';
 import { useRouter } from 'next/navigation';
 import { fetcher } from '@/lib/fetcher';
 import { Container } from '@/components/ui';
-import { User, IdCard, ShieldCheck, Clock, MapPin, Mail, LogOut } from 'lucide-react';
+import { User, IdCard, ShieldCheck, Clock, MapPin, Mail, LogOut, Settings } from 'lucide-react';
+import Link from 'next/link';
 import styles from './dashboard.module.css';
 
 export default function DashboardPage() {
@@ -34,10 +35,16 @@ export default function DashboardPage() {
             <h1>Shalom, {user.firstName}</h1>
             <p>Welcome to your Dream Centre leadership hub.</p>
           </div>
-          <button onClick={handleLogout} className={styles.logoutBtn}>
-            <LogOut size={18} />
-            Sign Out
-          </button>
+          <div className={styles.actions}>
+            <Link href="/dashboard/settings" className={styles.settingsBtn}>
+              <Settings size={18} />
+              Settings
+            </Link>
+            <button onClick={handleLogout} className={styles.logoutBtn}>
+              <LogOut size={18} />
+              Sign Out
+            </button>
+          </div>
         </div>
 
         <div className={styles.grid}>

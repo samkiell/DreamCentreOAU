@@ -26,6 +26,37 @@
   color: var(--color-text-secondary);
 }
 
+.actions {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.settingsBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-6);
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.settingsBtn:hover {
+  background: rgba(60, 16, 83, 0.05);
+  color: var(--color-earth);
+  border-color: var(--color-earth);
+}
+
 .logoutBtn {
   display: flex;
   align-items: center;
