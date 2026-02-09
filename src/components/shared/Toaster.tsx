@@ -5,7 +5,7 @@ import { Toaster as HotToaster } from 'react-hot-toast';
 export function Toaster() {
   return (
     <HotToaster
-      position="bottom"
+      position="bottom-left"
       toastOptions={{
         style: {
           background: 'var(--color-background-elevated)',
