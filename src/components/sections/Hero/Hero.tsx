@@ -7,6 +7,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { getHeroContent } from '@/lib/content';
 import { OptimizedImage } from '@/components/ui';
 import { MaskReveal, SectionReveal } from '@/components/shared';
@@ -86,6 +87,17 @@ export function Hero() {
             </div>
           </SectionReveal>
         )}
+
+        <SectionReveal delay={1.2} yOffset={30}>
+          <div className={styles.actions}>
+            <Link href="/register" className={styles.ctaPrimary}>
+              Register
+            </Link>
+            <Link href="/login" className={styles.ctaSecondary}>
+              Sign In
+            </Link>
+          </div>
+        </SectionReveal>
       </div>
 
       {/* Scroll Indicator */}
