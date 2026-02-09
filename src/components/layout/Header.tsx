@@ -16,9 +16,9 @@ import styles from './Header.module.css';
 const navLinks = [
   { href: '/#philosophy', label: 'Philosophy' },
   { href: '/#features', label: 'Programs' },
-  { href: '/#stakeholders', label: 'Leadership' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/#contact', label: 'Visit' },
+  { href: '/dashboard', label: 'Dashboard' },
+  { href: '/login', label: 'Login' },
 ];
 
 export function Header() {
@@ -62,7 +62,7 @@ export function Header() {
               <Link 
                 key={link.href} 
                 href={link.href} 
-                className={cn(styles.navLink, link.label === 'Gallery' && styles.navLinkHighlight)}
+                className={cn(styles.navLink, (link.label === 'Gallery' || link.label === 'Dashboard') && styles.navLinkHighlight)}
               >
                 {link.label}
               </Link>
