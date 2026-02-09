@@ -38,6 +38,10 @@ const facultiesData = [
   { name: "Administration" },
   { name: "Agriculture" },
   { name: "Arts" },
+  { name: "Basic Medical Sciences" },
+  { name: "Clinical Sciences" },
+  { name: "Computing Science and Engineering" },
+  { name: "Dentistry" },
   { name: "Education" },
   { name: "Environmental Design & Management" },
   { name: "Law" },
@@ -45,17 +49,46 @@ const facultiesData = [
   { name: "Science" },
   { name: "Social Sciences" },
   { name: "Technology" },
-  { name: "Basic Medical Sciences" },
-  { name: "Clinical Sciences" },
-  { name: "Dentistry" },
+  { name: "Basic Clinical Sciences" },
 ];
 
 const departmentsData = [
-  // Administration
-  { name: "Accounting", code: "ACC", facultyName: "Administration" },
+  // Computing Science and Engineering (New Faculty)
   {
-    name: "Business Administration",
-    code: "BUS",
+    name: "Computer Science",
+    code: "CSC",
+    facultyName: "Computing Science and Engineering",
+  },
+  {
+    name: "Computer Engineering",
+    code: "CPE",
+    facultyName: "Computing Science and Engineering",
+  },
+  {
+    name: "Software Engineering",
+    code: "SWE",
+    facultyName: "Computing Science and Engineering",
+  },
+  {
+    name: "Information Systems",
+    code: "IFS",
+    facultyName: "Computing Science and Engineering",
+  },
+  {
+    name: "Cyber Security",
+    code: "CYB",
+    facultyName: "Computing Science and Engineering",
+  },
+  {
+    name: "Intelligent Systems Engineering",
+    code: "ISE",
+    facultyName: "Computing Science and Engineering",
+  },
+
+  // Administration
+  {
+    name: "Management & Accounting",
+    code: "ACC",
     facultyName: "Administration",
   },
   {
@@ -120,14 +153,14 @@ const departmentsData = [
     code: "EFC",
     facultyName: "Education",
   },
-  { name: "Educational Management", code: "EDM_EDU", facultyName: "Education" }, // Renamed code to avoid duplicate with Faculty code
+  { name: "Educational Management", code: "EDM_EDU", facultyName: "Education" },
   {
     name: "Educational Technology & Library Studies",
     code: "ETL",
     facultyName: "Education",
   },
   {
-    name: "Health Education / Human Kinetics",
+    name: "Physical & Health Education",
     code: "PHE",
     facultyName: "Education",
   },
@@ -136,6 +169,7 @@ const departmentsData = [
     code: "STE",
     facultyName: "Education",
   },
+  { name: "Institute of Education", code: "IOE", facultyName: "Education" },
 
   // Environmental Design & Management
   {
@@ -182,7 +216,7 @@ const departmentsData = [
 
   // Pharmacy
   {
-    name: "Clinical Pharmacy & Pharmacy Admin",
+    name: "Clinical Pharmacy & Pharmacy Administration",
     code: "CPA",
     facultyName: "Pharmacy",
   },
@@ -195,7 +229,6 @@ const departmentsData = [
   { name: "Biochemistry", code: "BCH", facultyName: "Science" },
   { name: "Botany", code: "BOT", facultyName: "Science" },
   { name: "Chemistry", code: "CHM", facultyName: "Science" },
-  { name: "Computer Science", code: "CSC", facultyName: "Science" },
   { name: "Geology", code: "GLY", facultyName: "Science" },
   { name: "Mathematics", code: "MTH", facultyName: "Science" },
   { name: "Microbiology", code: "MCB", facultyName: "Science" },
@@ -221,20 +254,22 @@ const departmentsData = [
     code: "SOC",
     facultyName: "Social Sciences",
   },
+  { name: "Mass Communication", code: "MAC", facultyName: "Social Sciences" },
+  {
+    name: "Entrepreneurship & Industrial Extension",
+    code: "EIE",
+    facultyName: "Social Sciences",
+  },
+  { name: "Film Production", code: "FLP", facultyName: "Social Sciences" },
 
   // Technology
   {
-    name: "Agric. & Environmental Engineering",
+    name: "Agricultural & Environmental Engineering",
     code: "AEE",
     facultyName: "Technology",
   },
   { name: "Chemical Engineering", code: "CHE", facultyName: "Technology" },
   { name: "Civil Engineering", code: "CVE", facultyName: "Technology" },
-  {
-    name: "Computer Science & Engineering",
-    code: "CPE",
-    facultyName: "Technology",
-  },
   {
     name: "Electronic & Electrical Engineering",
     code: "EEE",
@@ -249,24 +284,20 @@ const departmentsData = [
   { name: "Mechanical Engineering", code: "MEE", facultyName: "Technology" },
 
   // Basic Medical Sciences
-  {
-    name: "Anatomy & Cell Biology",
-    code: "ANA",
-    facultyName: "Basic Medical Sciences",
-  },
+  { name: "Anatomy", code: "ANA", facultyName: "Basic Medical Sciences" },
   {
     name: "Medical Biochemistry",
     code: "MBC",
     facultyName: "Basic Medical Sciences",
   },
   {
-    name: "Medical Microbiology & Parasitology",
-    code: "MMP",
+    name: "Medical Microbiology",
+    code: "MMB",
     facultyName: "Basic Medical Sciences",
   },
   {
-    name: "Medical Pharmacology & Therapeutics",
-    code: "PHA",
+    name: "Medical Pharmacology",
+    code: "MPH",
     facultyName: "Basic Medical Sciences",
   },
   {
@@ -275,46 +306,26 @@ const departmentsData = [
     facultyName: "Basic Medical Sciences",
   },
   {
-    name: "Physiological Sciences",
-    code: "PHS",
-    facultyName: "Basic Medical Sciences",
-  },
-  {
     name: "Medical Rehabilitation",
     code: "MRH",
     facultyName: "Basic Medical Sciences",
   },
+  { name: "Physiology", code: "PHS", facultyName: "Basic Medical Sciences" },
 
   // Clinical Sciences
-  { name: "Anaesthesia", code: "ANS_CLS", facultyName: "Clinical Sciences" }, // Renamed to avoid duplicate with Animal Sciences
+  { name: "Anaesthesia", code: "ANS_CLS", facultyName: "Clinical Sciences" },
   { name: "Community Health", code: "CMH", facultyName: "Clinical Sciences" },
-  {
-    name: "Dermatology & Venereology",
-    code: "DER",
-    facultyName: "Clinical Sciences",
-  },
+  { name: "Dermatology", code: "DER", facultyName: "Clinical Sciences" },
   { name: "Medicine", code: "MED", facultyName: "Clinical Sciences" },
+  { name: "Mental Health", code: "MTH_CLS", facultyName: "Clinical Sciences" },
   {
-    name: "Mental Health (Psychiatry)",
-    code: "MTH_CLS",
-    facultyName: "Clinical Sciences",
-  }, // Renamed to avoid duplicate with Mathematics
-  {
-    name: "Obstetrics, Gynaecology & Perinatology",
+    name: "Obstetrics & Gynaecology",
     code: "OGP",
     facultyName: "Clinical Sciences",
   },
   { name: "Ophthalmology", code: "OPH", facultyName: "Clinical Sciences" },
-  {
-    name: "Orthopaedics & Traumatology",
-    code: "ORT",
-    facultyName: "Clinical Sciences",
-  },
-  {
-    name: "Paediatrics & Child Health",
-    code: "PED",
-    facultyName: "Clinical Sciences",
-  },
+  { name: "Orthopaedics", code: "ORT", facultyName: "Clinical Sciences" },
+  { name: "Paediatrics", code: "PED", facultyName: "Clinical Sciences" },
   { name: "Radiology", code: "RAD", facultyName: "Clinical Sciences" },
   { name: "Surgery", code: "SUR", facultyName: "Clinical Sciences" },
 
@@ -325,12 +336,26 @@ const departmentsData = [
     code: "OMS",
     facultyName: "Dentistry",
   },
+  { name: "Preventive Dentistry", code: "PDE", facultyName: "Dentistry" },
+  { name: "Restorative Dentistry", code: "RDE", facultyName: "Dentistry" },
+
+  // Basic Clinical Sciences
   {
-    name: "Preventive & Community Dentistry",
-    code: "PCD",
-    facultyName: "Dentistry",
+    name: "Chemical Pathology",
+    code: "CPH",
+    facultyName: "Basic Clinical Sciences",
   },
-  { name: "Restorative Dentistry", code: "RSD", facultyName: "Dentistry" },
+  { name: "Haematology", code: "HAE", facultyName: "Basic Clinical Sciences" },
+  {
+    name: "Medical Microbiology & Parasitology",
+    code: "MMP",
+    facultyName: "Basic Clinical Sciences",
+  },
+  {
+    name: "Morbid Anatomy & Forensic Medicine",
+    code: "MAF",
+    facultyName: "Basic Clinical Sciences",
+  },
 ];
 
 async function seed() {
