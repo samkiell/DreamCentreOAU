@@ -5,8 +5,9 @@
 
 :root {
   /* Colors — Institutional Palette */
-  --color-canvas: #ffffff; /* Primary background - White */
-  --color-stone: #ffffff; /* Major surfaces - White */
+  --color-canvas: #FAF7F2; /* Primary background - Warm Ivory */
+  --color-stone: #FAF7F2; /* Major surfaces - Warm Ivory */
+  --color-white: #ffffff;
   --color-earth: #3c1053; /* Primary Identity & Functional - Imperial Purple */
   --color-deep: #3c1053; /* Primary Institutional Content - Imperial Purple */
   --color-muted-gold: #d4af37; /* Accent - Legacy Gold */
