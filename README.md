@@ -72,4 +72,24 @@ To update the text or images on the site, modify the corresponding JSON files in
 
 ---
 
-*“A journey of a thousand miles begins with a single step.”* — Dream Centre Stairwell Mural
+*“A journey of a thousand miles begins with a single step.”* —# Dream Centre OAU Platform
+
+## Upscaling Phase Setup
+
+1. **Environment Variables**:
+   Add the following to your `.env.local`:
+   ```env
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_secure_secret_key
+   ```
+
+2. **Database Seeding**:
+   The system requires initial data for Faculties and Departments. You can seed these by creating a temporary script or manual entry.
+   - All new registrations default to `PENDING` status and `USER` role.
+   - To create the first `ADMIN`, manually update a user's role in MongoDB.
+
+3. **Running Locally**:
+   ```bash
+   npm install
+   npm run dev
+   ```well Mural
