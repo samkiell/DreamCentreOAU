@@ -188,6 +188,38 @@
   border-color: var(--color-muted-gold);
 }
 
+.hiddenInput {
+  display: none;
+}
+
+.inputWithIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: var(--space-4);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.inputWithIcon input {
+  padding-left: var(--space-11) !important;
+  width: 100%;
+}
+
+.loading {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  color: var(--color-earth);
+  font-size: var(--text-xl);
+}
+
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
