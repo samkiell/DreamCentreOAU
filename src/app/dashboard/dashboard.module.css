@@ -187,9 +187,15 @@
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  padding: var(--space-8);
+  padding: var(--space-6);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: var(--space-8);
+  }
 }
 
 .idCard {
@@ -471,22 +477,40 @@
     padding-top: var(--space-4);
   }
   
+  .greeting {
+    font-size: var(--text-3xl);
+  }
+
   .activeDisplay {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-4);
   }
   
+  .photoBox {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+
   .headerActions {
-     flex-wrap: wrap;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: var(--space-4);
   }
   
   .actionGroup {
-    flex: 1;
+    width: 100%;
     justify-content: space-between;
   }
   
   .logoutBtn {
     flex: 1;
     justify-content: center;
+  }
+
+  .infoRow {
+    padding: var(--space-4);
+    gap: var(--space-3);
   }
 }

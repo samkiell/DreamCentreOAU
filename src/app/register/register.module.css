@@ -6,14 +6,35 @@
   background-color: var(--color-canvas);
 }
 
- .card {
+.card {
   max-width: 600px;
+  width: 100%;
   margin: 0 auto;
   padding: var(--space-10);
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: var(--space-6) var(--space-4);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  
+  .title {
+    font-size: var(--text-3xl);
+  }
+  
+  .section {
+    padding-top: var(--space-10);
+    align-items: flex-start;
+  }
 }
 
 .title {
