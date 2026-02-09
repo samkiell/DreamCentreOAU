@@ -41,14 +41,31 @@ export async function PATCH(req: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const { phoneNumber, password } = await req.json();
+    const { phoneNumber, password, profileImage } = await req.json();
     await dbConnect();
+
+    // Fetch existing user to get username for cloudinary public_id
+    const existingUser = await User.findById(decoded.userId);
+    if (!existingUser) {
+      return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    }
 
     const updateData: any = {};
     if (phoneNumber) updateData.phoneNumber = phoneNumber;
     if (password) {
       const salt = await bcrypt.genSalt(12);
       updateData.password = await bcrypt.hash(password, salt);
+    }
+
+    // Handle profile image upload to Cloudinary
+    if (profileImage && profileImage.startsWith('data:image')) {
+      const cloudinary = (await import('@/lib/cloudinary')).default;
+      const uploadResponse = await cloudinary.uploader.upload(profileImage, {
+        folder: 'dream-centre/profiles',
+        public_id: `profile_${existingUser.username}`,
+        overwrite: true,
+      });
+      updateData.profileImage = uploadResponse.secure_url;
     }
 
     const user = await User.findByIdAndUpdate(

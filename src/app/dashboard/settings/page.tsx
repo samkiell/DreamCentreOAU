@@ -1,18 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import useSWR from 'swr';
 import { toast } from 'react-hot-toast';
 import { Container } from '@/components/ui';
 import { fetcher } from '@/lib/fetcher';
-import { User, Mail, Phone, Lock, Camera, ArrowLeft } from 'lucide-react';
+import { User, Mail, Phone, Lock, Camera, ArrowLeft, Upload } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import styles from './settings.module.css';
 
 export default function SettingsPage() {
-  const { data, error, mutate } = useSWR('/api/user/profile', fetcher);
+  const { data, error, mutate, isLoading: isFetching } = useSWR('/api/user/profile', fetcher);
   const router = useRouter();
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [isUpdating, setIsUpdating] = useState(false);
+  const [profilePreview, setProfilePreview] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     phoneNumber: '',
     password: '',
@@ -21,6 +23,21 @@ export default function SettingsPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        toast.error('Image size must be less than 5MB');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfilePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -37,13 +54,16 @@ export default function SettingsPage() {
         body: JSON.stringify({
           phoneNumber: formData.phoneNumber || undefined,
           password: formData.password || undefined,
+          profileImage: profilePreview || undefined,
         }),
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error);
+      
       toast.success("Profile updated successfully");
-      mutate();
+      await mutate();
       setFormData({ phoneNumber: '', password: '', confirmPassword: '' });
+      setProfilePreview(null);
     } catch (err: any) {
       toast.error(err.message);
     } finally {
@@ -51,8 +71,8 @@ export default function SettingsPage() {
     }
   };
 
-  if (error) return <div>Failed to load profile</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error) return <div className={styles.loading}>Failed to load profile</div>;
+  if (!data || isFetching) return <div className={styles.loading}>Synchronizing Account...</div>;
 
   const { user } = data;
 
@@ -73,16 +93,31 @@ export default function SettingsPage() {
           {/* Avatar Section */}
           <div className={styles.avatarSection}>
             <div className={styles.avatarWrapper}>
-              {user.profileImage ? (
-                <img src={user.profileImage} alt="Profile" className={styles.avatar} />
+              {(profilePreview || user.profileImage) ? (
+                <img 
+                  src={profilePreview || user.profileImage} 
+                  alt="Profile" 
+                  className={styles.avatar} 
+                />
               ) : (
                 <div className={styles.avatarPlaceholder}>
                   {user.firstName[0]}{user.lastName[0]}
                 </div>
               )}
-              <button className={styles.uploadBtn}>
+              <button 
+                type="button"
+                className={styles.uploadBtn} 
+                onClick={() => fileInputRef.current?.click()}
+              >
                 <Camera size={16} />
               </button>
+              <input 
+                type="file" 
+                ref={fileInputRef} 
+                onChange={handleFileChange} 
+                accept="image/*" 
+                className={styles.hiddenInput}
+              />
             </div>
             <h3>{user.firstName} {user.lastName}</h3>
             <span className={styles.roleBadge}>{user.role}</span>
@@ -107,7 +142,7 @@ export default function SettingsPage() {
                 </div>
                 <div className={styles.group}>
                   <label>DreamCenter ID</label>
-                  <div className={styles.readonlyValue}>{user.studentId || 'Pending Approval'}</div>
+                  <div className={styles.readonlyValue}>{user.studentId || 'DCO-PENDING'}</div>
                 </div>
               </div>
 
@@ -116,43 +151,52 @@ export default function SettingsPage() {
               <div className={styles.sectionTitle}>Contact & Security</div>
               <div className={styles.group}>
                 <label htmlFor="phoneNumber">Phone Number</label>
-                <input
-                  type="tel"
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  placeholder={user.phoneNumber || "Enter phone number"}
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                />
+                <div className={styles.inputWithIcon}>
+                  <Phone size={16} className={styles.inputIcon} />
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder={user.phoneNumber || "Enter phone number"}
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
 
               <div className={styles.row}>
                 <div className={styles.group}>
                   <label htmlFor="password">New Password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="••••••••"
-                    value={formData.password}
-                    onChange={handleChange}
-                  />
+                  <div className={styles.inputWithIcon}>
+                    <Lock size={16} className={styles.inputIcon} />
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="••••••••"
+                      value={formData.password}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
                 <div className={styles.group}>
                   <label htmlFor="confirmPassword">Confirm Password</label>
-                  <input
-                    type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    placeholder="••••••••"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                  />
+                  <div className={styles.inputWithIcon}>
+                    <Lock size={16} className={styles.inputIcon} />
+                    <input
+                      type="password"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      placeholder="••••••••"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
               </div>
 
               <button type="submit" className={styles.saveBtn} disabled={isUpdating}>
-                {isUpdating ? 'Saving Changes...' : 'Save Profile Details'}
+                {isUpdating ? 'Synchronizing Records...' : 'Save Profile Details'}
               </button>
             </form>
           </div>
