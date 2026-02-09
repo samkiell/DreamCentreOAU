@@ -8,6 +8,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useScrolledPast } from '@/hooks';
 import { Container } from '@/components/ui';
@@ -23,6 +24,7 @@ const navLinks = [
 
 export function Header() {
   const isScrolled = useScrolledPast(50);
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Close menu when clicking outside or on a link
@@ -58,15 +60,22 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className={styles.nav} aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href} 
-                className={cn(styles.navLink, (link.label === 'Gallery' || link.label === 'Dashboard') && styles.navLinkHighlight)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href));
+              
+              return (
+                <Link 
+                  key={link.href} 
+                  href={link.href} 
+                  className={cn(
+                    styles.navLink, 
+                    isActive && styles.navLinkHighlight
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Mobile Hamburger Button */}
@@ -86,16 +95,23 @@ export function Header() {
       {/* Mobile Menu Overlay */}
       <div className={cn(styles.mobileMenu, isMenuOpen && styles.mobileMenuOpen)}>
         <nav className={styles.mobileNav} aria-label="Mobile navigation">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(styles.mobileNavLink, link.label === 'Gallery' && styles.navLinkHighlight)}
-              onClick={handleLinkClick}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href));
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  styles.mobileNavLink, 
+                  isActive && styles.navLinkHighlight
+                )}
+                onClick={handleLinkClick}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
 
