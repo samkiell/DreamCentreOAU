@@ -21,7 +21,6 @@ export default function RegisterPage() {
     matricNumber: '',
     facultyId: '',
     deptId: '',
-    admissionYear: new Date().getFullYear(),
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +34,7 @@ export default function RegisterPage() {
     const { name, value } = e.target;
     setFormData(prev => ({ 
       ...prev, 
-      [name]: name === 'admissionYear' ? parseInt(value) : value 
+      [name]: value 
     }));
     
     // Reset department if faculty changes
@@ -180,20 +179,6 @@ export default function RegisterPage() {
                   ))}
                 </select>
               </div>
-            </div>
-
-            <div className={styles.group}>
-              <label htmlFor="admissionYear">Admission Year</label>
-              <input
-                type="number"
-                id="admissionYear"
-                name="admissionYear"
-                required
-                value={formData.admissionYear}
-                onChange={handleChange}
-                min="2000"
-                max={new Date().getFullYear()}
-              />
             </div>
 
             <div className={styles.group}>
