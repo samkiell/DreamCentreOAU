@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import { useRouter } from 'next/navigation';
 import { fetcher } from '@/lib/fetcher';
 import { Container } from '@/components/ui';
-import { User, IdentificationCard, ShieldCheck, Clock, MapPin, Mail, LogOut } from 'lucide-react';
+import { User, IdCard, ShieldCheck, Clock, MapPin, Mail, LogOut } from 'lucide-react';
 import styles from './dashboard.module.css';
 
 export default function DashboardPage() {
@@ -44,7 +44,7 @@ export default function DashboardPage() {
           {/* Main ID Card */}
           <div className={`${styles.card} ${styles.idCard}`}>
             <div className={styles.cardHeader}>
-              <IdentificationCard size={24} className={styles.cardIcon} />
+              <IdCard size={24} className={styles.cardIcon} />
               <span>Institutional Identity</span>
             </div>
             
