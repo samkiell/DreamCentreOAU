@@ -10,6 +10,8 @@ export interface IUser extends Document {
   departmentCode: string;
   faculty: string;
   admissionYear: number;
+  phoneNumber?: string;
+  profileImage?: string;
   role: 'USER' | 'ADMIN';
   status: 'PENDING' | 'AWAITING_APPROVAL' | 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED';
   createdAt: Date;
@@ -29,6 +31,8 @@ const UserSchema: Schema = new Schema(
       lowercase: true,
       trim: true,
     },
+    phoneNumber: { type: String },
+    profileImage: { type: String },
     studentId: {
       type: String,
       unique: true,
