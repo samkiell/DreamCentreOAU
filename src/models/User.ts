@@ -4,9 +4,12 @@ export interface IUser extends Document {
   firstName: string;
   lastName: string;
   email: string;
+  username: string;
   studentId: string; // The generated DCO-XXX-YY-ZZZ ID
   departmentCode: string;
+  faculty: string;
   admissionYear: number;
+  role: 'USER' | 'ADMIN';
   status: 'PENDING' | 'AWAITING_APPROVAL' | 'ACTIVE' | 'SUSPENDED' | 'DEACTIVATED';
   createdAt: Date;
   updatedAt: Date;
@@ -16,6 +19,7 @@ const UserSchema: Schema = new Schema(
   {
     firstName: { type: String, required: true, trim: true },
     lastName: { type: String, required: true, trim: true },
+    username: { type: String, required: true, unique: true, lowercase: true, trim: true },
     email: {
       type: String,
       required: true,
@@ -30,7 +34,13 @@ const UserSchema: Schema = new Schema(
       index: true,
     },
     departmentCode: { type: String, required: true, uppercase: true },
+    faculty: { type: String, required: true },
     admissionYear: { type: Number, required: true },
+    role: {
+      type: String,
+      enum: ['USER', 'ADMIN'],
+      default: 'USER',
+    },
     status: {
       type: String,
       enum: ['PENDING', 'AWAITING_APPROVAL', 'ACTIVE', 'SUSPENDED', 'DEACTIVATED'],
