@@ -77,7 +77,7 @@ export default function RegisterPage() {
     <section className={styles.section}>
       <Container>
         <div className={styles.card}>
-          <h1 className={styles.title}>Join Dream Centre</h1>
+          <h1 className={styles.title}>Join The Dream Centre</h1>
           <p className={styles.subtitle}>Begin your leadership journey with us</p>
 
           <form onSubmit={handleSubmit} className={styles.form}>
