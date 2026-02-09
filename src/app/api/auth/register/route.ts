@@ -16,9 +16,20 @@ export async function POST(req: NextRequest) {
       password, 
       matricNumber, 
       facultyId, 
-      deptId, 
-      admissionYear 
+      deptId 
     } = body;
+
+    // 0. Extract Admission Year from Matric Number
+    // Common OAU formats: ABC/2024/XXX or 2024/XXX
+    const yearMatch = matricNumber.match(/(?:^|\/)(20\d{2})(?:\/|$)/);
+    const admissionYear = body.admissionYear || (yearMatch ? parseInt(yearMatch[1]) : null);
+
+    if (!admissionYear) {
+      return NextResponse.json(
+        { error: 'Could not determine admission year from matric number. Please ensure format is ABC/YYYY/XXX' },
+        { status: 400 }
+      );
+    }
 
     // 1. Mandatory Institutional Email Validation
     const emailRegex = /@(student\.)?oauife\.edu\.ng$/i;
