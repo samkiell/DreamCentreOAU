@@ -4,7 +4,7 @@ The **Senator Oluremi Tinubu Dream Centre** is a state-of-the-art inspiration an
 
 ---
 
-## 🏛️ About the Project
+## 🏗️ About the Project
 
 The Dream Centre is designed to nurture the next generation of Nigerian leaders through:
 - **Inspiration**: A tranquil environment for reflection and visioning.
@@ -20,76 +20,50 @@ This website is built with a focus on premium aesthetics, performance, and acces
 - **Components**: Functional React components with a focus on Semantic HTML
 - **Animations**: CSS transitions and scroll-triggered effects
 - **Optimization**: Next/Image for high-performance visual delivery
+- **Backend**: MongoDB with Mongoose
+- **Security**: JWT-based Authentication & Bcrypt Hashing
 
 ## 📂 Project Structure
 
 ```bash
 src/
-├── app/            # Next.js App Router (Layouts, Pages, Globals)
+├── app/            # Next.js App Router (Layouts, Pages, Globals, API Routes)
 ├── components/     # UI Library & Section-specific components
-│   ├── sections/   # Major page sections (Hero, Philosophy, Gallery, etc.)
-│   └── ui/         # Base UI components (Container, OptimizedImage, etc.)
-├── content/        # JSON-based content management for easy updates
-├── lib/            # Utilities, content fetchers, and image helpers
-├── hooks/          # Custom React hooks (scroll tracking, etc.)
+├── models/         # Mongoose Database Schemas
+├── lib/            # Utilities (Auth, ID Generation, DB Connection)
+├── content/        # JSON-based content management
+├── hooks/          # Custom React hooks
 └── types/          # TypeScript definitions
 ```
 
 ## 🛠️ Key Features
 
-- **Dynamic Quotes**: A randomized quote system featuring authentic statements from the Patron, Senator Oluremi Tinubu.
-- **Premium Gallery Slider**: A custom-built, responsive carousel showcasing the architectural beauty of the centre.
-- **Responsive Leadership Grid**: Optimized circular portraits adjusted for traditional headgear and formal aesthetics.
-- **Content-First Architecture**: All text and images are managed via JSON files in `src/content/`, allowing for rapid updates without code changes.
+- **DreamCenter ID System**: Automated, sequential identity issuance (`DCO-SWE24-001`).
+- **Institutional Authentication**: Mandatory OAU student/staff email verification.
+- **Role-Based Access**: Specialized dashboards for Users and Administrators.
+- **Dynamic Content**: Managed via JSON files in `src/content/`.
 
-## 👨‍💻 Development
+## 👨‍💻 Development & Setup
 
-### Getting Started
+### 1. Environment Variables
+Create a `.env.local` file in the root:
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_secret_key
+```
 
-1. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+### 2. Getting Started
+```bash
+npm install
+npm run dev
+```
 
-2. **Run Development Server**:
-   ```bash
-   npm run dev
-   ```
-
-3. **Production Build**:
-   ```bash
-   npm run build
-   ```
-
-### Updating Content
-
-To update the text or images on the site, modify the corresponding JSON files in:
-- `src/content/hero.json`: Hero text and background
-- `src/content/philosophy.json`: Core text and mural images
-- `src/content/stakeholders.json`: Leadership names, bios, and portraits
-- `src/content/gallery.json`: Physical space images and captions
-- `src/content/quotes.json`: List of inspirational quotes
+### 3. Database Seeding
+The system requires initial data for **Faculties** and **Departments** to be populated in MongoDB.
+- All new registrations default to `PENDING` status.
+- Admin must manually approve users to trigger `DreamCenter ID` generation.
+- To create the first Super Admin, manually set `role: "ADMIN"` in the database for a registered user.
 
 ---
 
-*“A journey of a thousand miles begins with a single step.”* —# Dream Centre OAU Platform
-
-## Upscaling Phase Setup
-
-1. **Environment Variables**:
-   Add the following to your `.env.local`:
-   ```env
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_secure_secret_key
-   ```
-
-2. **Database Seeding**:
-   The system requires initial data for Faculties and Departments. You can seed these by creating a temporary script or manual entry.
-   - All new registrations default to `PENDING` status and `USER` role.
-   - To create the first `ADMIN`, manually update a user's role in MongoDB.
-
-3. **Running Locally**:
-   ```bash
-   npm install
-   npm run dev
-   ```well Mural
+*“A journey of a thousand miles begins with a single step.”* — Dream Centre Stairwell Mural
