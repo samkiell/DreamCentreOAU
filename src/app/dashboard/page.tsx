@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import { useRouter } from 'next/navigation';
 import { fetcher } from '@/lib/fetcher';
 import { Container } from '@/components/ui';
-import { User, IdCard, ShieldCheck, Clock, MapPin, Mail, LogOut, Settings } from 'lucide-react';
+import { User, IdCard, ShieldCheck, Clock, MapPin, Mail, LogOut, Settings, Bell, ChevronRight, GraduationCap, Phone } from 'lucide-react';
 import Link from 'next/link';
 import styles from './dashboard.module.css';
 
@@ -13,13 +13,18 @@ export default function DashboardPage() {
   const router = useRouter();
 
   const handleLogout = async () => {
-    // Basic logout logic - in a real app, you'd call an API to clear the cookie
     document.cookie = 'dc_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     router.push('/login');
     router.refresh();
   };
 
-  if (isLoading) return <div className={styles.loading}>Loading Dashboard...</div>;
+  if (isLoading) return (
+    <div className={styles.loading}>
+      <div className={styles.loader}></div>
+      <span>Securing Session...</span>
+    </div>
+  );
+
   if (error) {
     router.push('/login');
     return null;
@@ -30,102 +35,138 @@ export default function DashboardPage() {
   return (
     <div className={styles.wrapper}>
       <Container>
-        <div className={styles.header}>
-          <div className={styles.welcome}>
-            <h1>Shalom, {user.firstName}</h1>
-            <p>Welcome to your Dream Centre leadership hub.</p>
+        {/* Institutional Header */}
+        <header className={styles.header}>
+          <div className={styles.headerInfo}>
+            <div className={styles.badge}>Institutional Portal</div>
+            <h1 className={styles.greeting}>Shalom, {user.firstName}</h1>
+            <p className={styles.tagline}>Senator Oluremi Tinubu Dream Centre Identity Hub</p>
           </div>
-          <div className={styles.actions}>
-            <Link href="/dashboard/settings" className={styles.settingsBtn}>
-              <Settings size={18} />
-              Settings
-            </Link>
-            <button onClick={handleLogout} className={styles.logoutBtn}>
-              <LogOut size={18} />
-              Sign Out
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          {/* Main ID Card */}
-          <div className={`${styles.card} ${styles.idCard}`}>
-            <div className={styles.cardHeader}>
-              <IdCard size={24} className={styles.cardIcon} />
-              <span>Institutional Identity</span>
+          <div className={styles.headerActions}>
+            <div className={styles.notificationBell}>
+              <Bell size={20} />
+              <span className={styles.notifDot}></span>
             </div>
-            
-            {user.status === 'ACTIVE' ? (
-              <div className={styles.idContent}>
-                <div className={styles.dcIdLabel}>DreamCenter ID</div>
-                <div className={styles.dcIdValue}>{user.studentId}</div>
-                <div className={styles.idBadge}>
-                  <ShieldCheck size={14} /> Official Member
+            <div className={styles.actionGroup}>
+              <Link href="/dashboard/settings" className={styles.iconAction}>
+                <Settings size={20} />
+              </Link>
+              <button onClick={handleLogout} className={styles.logoutBtn}>
+                <LogOut size={18} />
+                <span>Exit Portal</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <section className={styles.mainGrid}>
+          {/* Identity Column */}
+          <div className={styles.identityCol}>
+            <div className={`${styles.card} ${styles.idCard} ${user.status === 'ACTIVE' ? styles.activeId : styles.pendingIdCard}`}>
+              <div className={styles.cardHeader}>
+                <div className={styles.cardHeaderLeft}>
+                  <IdCard size={20} />
+                  <span>Leadership Identity</span>
+                </div>
+                {user.status === 'ACTIVE' && <ShieldCheck size={20} className={styles.verifiedIcon} />}
+              </div>
+
+              <div className={styles.idBody}>
+                {user.status === 'ACTIVE' ? (
+                  <div className={styles.activeDisplay}>
+                    <div className={styles.photoBox}>
+                       <User size={60} />
+                    </div>
+                    <div className={styles.activeInfo}>
+                       <label>DCO Member ID</label>
+                       <div className={styles.idNumber}>{user.studentId}</div>
+                       <div className={styles.expiry}>Digital Credential • {new Date().getFullYear()}</div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className={styles.pendingDisplay}>
+                    <div className={styles.pendingRing}>
+                      <Clock size={40} />
+                    </div>
+                    <h3>Verification Underway</h3>
+                    <p>Your institutional credentials are being cross-referenced with university records.</p>
+                    <div className={styles.statusPill}>STATUS: {user.status.replace('_', ' ')}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className={styles.quickActions}>
+               <Link href="/dashboard/settings" className={styles.quickItem}>
+                  <User size={18} />
+                  <span>Complete Profile</span>
+                  <ChevronRight size={16} />
+               </Link>
+               <div className={styles.quickItem}>
+                  <GraduationCap size={18} />
+                  <span>Academic Verification</span>
+                  <ChevronRight size={16} />
+               </div>
+            </div>
+          </div>
+
+          {/* Details Column */}
+          <div className={styles.detailsCol}>
+            <div className={styles.infoGroup}>
+              <h2 className={styles.groupTitle}>Institutional Record</h2>
+              <div className={styles.infoCard}>
+                <div className={styles.infoRow}>
+                   <div className={styles.infoIcon}><User size={18} /></div>
+                   <div className={styles.infoData}>
+                      <label>Full Name</label>
+                      <span>{user.firstName} {user.lastName}</span>
+                   </div>
+                </div>
+                <div className={styles.infoRow}>
+                   <div className={styles.infoIcon}><ShieldCheck size={18} /></div>
+                   <div className={styles.infoData}>
+                      <label>Matriculation Number</label>
+                      <span>{user.matricNumber}</span>
+                   </div>
+                </div>
+                <div className={styles.infoRow}>
+                   <div className={styles.infoIcon}><MapPin size={18} /></div>
+                   <div className={styles.infoData}>
+                      <label>Academic Faculty</label>
+                      <span>{user.faculty}</span>
+                   </div>
+                </div>
+                <div className={styles.infoRow}>
+                   <div className={styles.infoIcon}><GraduationCap size={18} /></div>
+                   <div className={styles.infoData}>
+                      <label>Major Department</label>
+                      <span>{user.departmentCode}</span>
+                   </div>
                 </div>
               </div>
-            ) : (
-              <div className={styles.pendingId}>
-                <Clock size={40} className={styles.pendingIcon} />
-                <h3>ID Generation Pending</h3>
-                <p>An administrator is currently reviewing your profile. You will receive your official ID once approved.</p>
-              </div>
-            )}
-          </div>
+            </div>
 
-          {/* Academic Profile */}
-          <div className={styles.card}>
-            <div className={styles.cardHeader}>
-              <User size={24} className={styles.cardIcon} />
-              <span>Academic Profile</span>
-            </div>
-            <div className={styles.profileList}>
-              <div className={styles.profileItem}>
-                <span className={styles.label}>Full Name</span>
-                <span className={styles.value}>{user.firstName} {user.lastName}</span>
-              </div>
-              <div className={styles.profileItem}>
-                <span className={styles.label}>Matric Number</span>
-                <span className={styles.value}>{user.matricNumber}</span>
-              </div>
-              <div className={styles.profileItem}>
-                <span className={styles.label}>Faculty</span>
-                <span className={styles.value}>{user.faculty}</span>
-              </div>
-              <div className={styles.profileItem}>
-                <span className={styles.label}>Department</span>
-                <span className={styles.value}>{user.departmentCode}</span>
+            <div className={styles.infoGroup}>
+              <h2 className={styles.groupTitle}>Contact Connection</h2>
+              <div className={styles.infoCard}>
+                <div className={styles.infoRow}>
+                   <div className={styles.infoIcon}><Mail size={18} /></div>
+                   <div className={styles.infoData}>
+                      <label>University Email</label>
+                      <span>{user.email}</span>
+                   </div>
+                </div>
+                <div className={styles.infoRow}>
+                   <div className={styles.infoIcon}><Phone size={18} /></div>
+                   <div className={styles.infoData}>
+                      <label>Mobile Number</label>
+                      <span>{user.phoneNumber || 'Provision pending'}</span>
+                   </div>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Quick Info */}
-          <div className={styles.card}>
-            <div className={styles.cardHeader}>
-              <Mail size={24} className={styles.cardIcon} />
-              <span>Contact Information</span>
-            </div>
-            <div className={styles.profileList}>
-              <div className={styles.profileItem}>
-                <span className={styles.label}>OAU Email</span>
-                <span className={styles.value}>{user.email}</span>
-              </div>
-              <div className={styles.profileItem}>
-                <span className={styles.label}>Username</span>
-                <span className={styles.value}>{user.username}</span>
-              </div>
-              <div className={styles.profileItem}>
-                <span className={styles.label}>Phone</span>
-                <span className={styles.value}>{user.phoneNumber || 'Not provided'}</span>
-              </div>
-              <div className={styles.profileItem}>
-                <span className={styles.label}>Status</span>
-                <span className={`${styles.status} ${styles[user.status.toLowerCase()]}`}>
-                  {user.status}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        </section>
       </Container>
     </div>
   );
