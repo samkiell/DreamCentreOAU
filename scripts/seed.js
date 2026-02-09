@@ -56,12 +56,12 @@ const departmentsData = [
   // Computing Science and Engineering (New Faculty)
   {
     name: "Computer Science with Mathematics",
-    code: "CSC",
+    code: "CSM",
     facultyName: "Computing Science and Engineering",
   },
   {
     name: "Computer Engineering",
-    code: "CSC",
+    code: "CPE",
     facultyName: "Computing Science and Engineering",
   },
   {
@@ -71,7 +71,7 @@ const departmentsData = [
   },
   {
     name: "Information Systems",
-    code: "CIS",
+    code: "IFS",
     facultyName: "Computing Science and Engineering",
   },
   {
@@ -81,7 +81,7 @@ const departmentsData = [
   },
   {
     name: "Computer Science with Economics",
-    code: "CSC",
+    code: "CSW",
     facultyName: "Computing Science and Engineering",
   },
 
