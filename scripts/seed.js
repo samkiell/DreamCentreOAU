@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
-const MONGODB_URI =
-  "mongodb+srv://samkiel:dcodb@dco.18gjltx.mongodb.net/?appName=DCO";
+const MONGODB_URI = process.env.MONGODB_URI
 
 const FacultySchema = new mongoose.Schema(
   {
