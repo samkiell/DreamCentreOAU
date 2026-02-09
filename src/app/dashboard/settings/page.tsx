@@ -5,7 +5,7 @@ import useSWR from 'swr';
 import { toast } from 'react-hot-toast';
 import { Container } from '@/components/ui';
 import { fetcher } from '@/lib/fetcher';
-import { User, Mail, Phone, Lock, Camera, ArrowLeft, Upload } from 'lucide-react';
+import { User, Mail, Phone, Lock, Camera, ArrowLeft, Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import styles from './settings.module.css';
 
@@ -14,7 +14,7 @@ export default function SettingsPage() {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isUpdating, setIsUpdating] = useState(false);
-  const [profilePreview, setProfilePreview] = useState<string | null>(null);
+  const [isUploadingPhoto, setIsUploadingPhoto] = useState(false);
   const [formData, setFormData] = useState({
     phoneNumber: '',
     password: '',
@@ -23,6 +23,31 @@ export default function SettingsPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const syncProfilePhoto = async (base64Image: string) => {
+    setIsUploadingPhoto(true);
+    const toastId = toast.loading('Uploading institutional portrait...');
+    
+    try {
+      const res = await fetch('/api/user/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          profileImage: base64Image,
+        }),
+      });
+      
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error);
+      
+      toast.success("Portrait updated successfully", { id: toastId });
+      await mutate();
+    } catch (err: any) {
+      toast.error(err.message, { id: toastId });
+    } finally {
+      setIsUploadingPhoto(false);
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +59,8 @@ export default function SettingsPage() {
       }
       const reader = new FileReader();
       reader.onloadend = () => {
-        setProfilePreview(reader.result as string);
+        const base64 = reader.result as string;
+        syncProfilePhoto(base64);
       };
       reader.readAsDataURL(file);
     }
@@ -54,16 +80,14 @@ export default function SettingsPage() {
         body: JSON.stringify({
           phoneNumber: formData.phoneNumber || undefined,
           password: formData.password || undefined,
-          profileImage: profilePreview || undefined,
         }),
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error);
       
-      toast.success("Profile updated successfully");
+      toast.success("Profile details updated");
       await mutate();
       setFormData({ phoneNumber: '', password: '', confirmPassword: '' });
-      setProfilePreview(null);
     } catch (err: any) {
       toast.error(err.message);
     } finally {
@@ -93,21 +117,29 @@ export default function SettingsPage() {
           {/* Avatar Section */}
           <div className={styles.avatarSection}>
             <div className={styles.avatarWrapper}>
-              {(profilePreview || user.profileImage) ? (
+              {user.profileImage ? (
                 <img 
-                  src={profilePreview || user.profileImage} 
+                  src={user.profileImage} 
                   alt="Profile" 
-                  className={styles.avatar} 
+                  className={`${styles.avatar} ${isUploadingPhoto ? styles.avatarBlur : ''}`} 
                 />
               ) : (
                 <div className={styles.avatarPlaceholder}>
                   {user.firstName[0]}{user.lastName[0]}
                 </div>
               )}
+              
+              {isUploadingPhoto && (
+                <div className={styles.photoLoader}>
+                  <Loader2 size={24} className={styles.spin} />
+                </div>
+              )}
+
               <button 
                 type="button"
                 className={styles.uploadBtn} 
                 onClick={() => fileInputRef.current?.click()}
+                disabled={isUploadingPhoto}
               >
                 <Camera size={16} />
               </button>
