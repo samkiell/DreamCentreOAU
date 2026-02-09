@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import useSWR from 'swr';
 import { toast } from 'react-hot-toast';
+import { Eye, EyeOff } from 'lucide-react';
 import { Container } from '@/components/ui';
 import { fetcher } from '@/lib/fetcher';
 import styles from './register.module.css';
@@ -24,6 +25,7 @@ export default function RegisterPage() {
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   // Filter departments based on selected faculty
   const filteredDepartments = data?.departments?.filter(
@@ -183,15 +185,24 @@ export default function RegisterPage() {
 
             <div className={styles.group}>
               <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                required
-                value={formData.password}
-                onChange={handleChange}
-                placeholder="••••••••"
-              />
+              <div className={styles.passwordWrapper}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  required
+                  value={formData.password}
+                  onChange={handleChange}
+                  placeholder="••••••••"
+                />
+                <button 
+                  type="button" 
+                  className={styles.eyeBtn}
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
             </div>
 
             <button type="submit" className={styles.button} disabled={isLoading}>

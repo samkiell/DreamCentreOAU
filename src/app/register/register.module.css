@@ -67,6 +67,7 @@
 
 .group input,
 .group select {
+  width: 100%;
   padding: var(--space-3) var(--space-4);
   background: var(--color-canvas);
   border: 1px solid var(--color-border);
@@ -75,6 +76,34 @@
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   transition: border-color var(--transition-fast);
+}
+
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordWrapper input {
+  padding-right: var(--space-12);
+}
+
+.eyeBtn {
+  position: absolute;
+  right: var(--space-3);
+  background: none;
+  border: none;
+  padding: var(--space-1);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.eyeBtn:hover {
+  color: var(--color-earth);
 }
 
 .group input:focus,
